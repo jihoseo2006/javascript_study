@@ -1088,18 +1088,26 @@ function hmrAccept(bundle, id) {
 // 위의 코드 수정본
 class User {
     constructor(first, last){
-        this.firstname = first;
-        this.lastname = last;
+        this.firstName = first;
+        this.lastName = last;
     }
-    get fullname() {
+    get fullName() {
         console.log("Gatting full name!");
-        return `${this.firstname} ${this.lastname}`;
+        return `${this.firstName} ${this.lastName}`;
+    }
+    set fullName(value) {
+        console.log(value);
+        [this.firstName, this.lastName] = value.split(" ");
     }
 }
-const jiho = new User("Jiho", "seo");
-console.log(jiho.fullname);
-jiho.firstname = "Neo";
-console.log(jiho.fullname);
+const jiho = new User("Jiho", "Seo");
+console.log(jiho.fullName);
+jiho.firstName = "Neo";
+console.log(jiho.fullName);
+jiho.fullName = "Neo Anderson" //set의 개념. 이 값은 value에 매개변수로 들어감.
+;
+console.log(jiho) //정적 메소드
+;
 
 },{}]},["9ZIyz","adjPd"], "adjPd", "parcelRequirebaba")
 

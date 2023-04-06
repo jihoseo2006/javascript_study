@@ -699,25 +699,32 @@
 
 class User {
   constructor(first, last) {
-    this.firstname = first
-    this.lastname = last
+    this.firstName = first
+    this.lastName = last
   }
-  get fullname() { //하나의 Gatter, 값을 받아내는 메소드
+  get fullName() { //하나의 Gatter, 값을 값을 조회(받아내는)하는 메소드  
     console.log('Gatting full name!')
-    return `${this.firstname} ${this.lastname}`
+    return `${this.firstName} ${this.lastName}`
+  }
+  set fullName(value) { //setter, 값을 할당할떄 동작하는 매소드
+    console.log(value)
+    ;[this.firstName, this.lastName] = value.split(' ')
   }
 }
 
-const jiho = new User('Jiho','seo')
+const jiho = new User('Jiho','Seo')
 
-console.log(jiho.fullname)
+console.log(jiho.fullName)
 
-jiho.firstname = 'Neo'
+jiho.firstName = 'Neo'
 
-console.log(jiho.fullname)
+console.log(jiho.fullName)
 
- 
+jiho.fullName = 'Neo Anderson' //set의 개념. 이 값은 value에 매개변수로 들어감.
+console.log(jiho)
 
+
+//정적 메소드
 
 
 
