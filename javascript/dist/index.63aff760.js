@@ -1058,19 +1058,48 @@ function hmrAccept(bundle, id) {
 //   return `${this.firstname} ${this.lastname}`
 // }
 //ES6 Classes 방식 예제
+// class User {
+//   constructor(first, last) {
+//     this.firstname = first
+//     this.lastname = last
+//   }
+//   getFullName() {
+//     return `${this.firstname} ${this.lastname}`
+//   }
+// }
+// const jiho = new User('Jiho','Seo')
+// const neo = new User('Neo','Anderson')
+// console.log(jiho)
+// console.log(neo)
+// Getter, Setter
+// class User {
+//   constructor(first, last) {
+//     this.firstname = first
+//     this.lastname = last
+//   }
+//   getfullname() { 
+//     return `${this.firstname} ${this.lastname}`
+//   }
+// }
+// const jiho = new User('Jiho','seo')
+// console.log(jiho.getfullname())
+// jiho.firstname = 'Neo'
+// console.log(jiho.getfullname())
+// 위의 코드 수정본
 class User {
     constructor(first, last){
         this.firstname = first;
         this.lastname = last;
     }
-    getFullName() {
+    get fullname() {
+        console.log("Gatting full name!");
         return `${this.firstname} ${this.lastname}`;
     }
 }
-const jiho = new User("Jiho", "Seo");
-const neo = new User("Neo", "Anderson");
-console.log(jiho);
-console.log(neo);
+const jiho = new User("Jiho", "seo");
+console.log(jiho.fullname);
+jiho.firstname = "Neo";
+console.log(jiho.fullname);
 
 },{}]},["9ZIyz","adjPd"], "adjPd", "parcelRequirebaba")
 
