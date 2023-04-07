@@ -697,34 +697,38 @@
 
 // 위의 코드 수정본
 
-class User {
-  constructor(first, last) {
-    this.firstName = first
-    this.lastName = last
-  }
-  get fullName() { //하나의 Gatter, 값을 값을 조회(받아내는)하는 메소드  
-    console.log('Gatting full name!')
-    return `${this.firstName} ${this.lastName}`
-  }
-  set fullName(value) { //setter, 값을 할당할떄 동작하는 매소드
-    console.log(value)
-    ;[this.firstName, this.lastName] = value.split(' ')
-  }
-}
+// class User {
+//   constructor(first, last) {
+//     this.firstName = first
+//     this.lastName = last
+//   }
+//   get fullName() { //하나의 Gatter, 값을 값을 조회(받아내는)하는 메소드  
+//     console.log('Gatting full name!')
+//     return `${this.firstName} ${this.lastName}`
+//   }
+//   set fullName(value) { //setter, 값을 할당할떄 동작하는 매소드
+//     console.log(value)
+//     ;[this.firstName, this.lastName] = value.split(' ')
+//   }
+// }
 
-const jiho = new User('Jiho','Seo')
+// const jiho = new User('Jiho','Seo')
 
-console.log(jiho.fullName)
+// console.log(jiho.fullName)
 
-jiho.firstName = 'Neo'
+// jiho.firstName = 'Neo'
 
-console.log(jiho.fullName)
+// console.log(jiho.fullName)
 
-jiho.fullName = 'Neo Anderson' //set의 개념. 이 값은 value에 매개변수로 들어감.
-console.log(jiho)
+// jiho.fullName = 'Neo Anderson' //set의 개념. 이 값은 value에 매개변수로 들어감.
+// console.log(jiho)
 
 
 //정적 메소드
+
+
+
+
 
 
 
