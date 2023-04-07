@@ -1107,30 +1107,105 @@ function hmrAccept(bundle, id) {
 // jiho.fullName = 'Neo Anderson' //set의 개념. 이 값은 value에 매개변수로 들어감.
 // console.log(jiho)
 //정적 메소드
-class User {
-    constructor(first, last){
-        this.firstName = first;
-        this.lastName = last;
+// class User {
+//   constructor(first, last) {
+//     this.firstName = first
+//     this.lastName = last
+//   }
+//   getFullName() { //일반(혹은 프로토타입) 메소드는 기본적으로 인스턴스에서 사용함.
+//     return `${this.firstName} ${this.lastName}`
+//   }
+//   static isUser(user) {// 정적 메소드, 클래스에서만 사용 가능하고 인스턴스는 사용 불가
+//     if (user.firstName && user.lastName) {
+//       return true
+//     }
+//     return false
+//   }
+// }
+// const jiho = new User('Jiho', 'Seo')
+// const neo = new User('Neo', 'Anderson')
+// const lewis = {
+//   name: 'Lewis Yang',
+//   age: 85
+// }
+// console.log(jiho.getFullName())
+// console.log(neo.getFullName())
+// console.log(User.isUser(jiho))
+// console.log(User.isUser(neo))
+// console.log(User.isUser(lewis))
+//상속과 instanceof
+//운송수단
+class Vehicle {
+    constructor(acceleration = 1){
+        this.speed = 0;
+        this.acceleration = acceleration;
     }
-    getFullName() {
-        return `${this.firstName} ${this.lastName}`;
+    accelerate() {
+        this.speed += this.acceleration;
     }
-    static isUser(user) {
-        if (user.firstName && user.lastName) return true;
-        return false;
+    decelerate() {
+        if (this.speed <= 0) {
+            console.log("정지!");
+            return;
+        }
+        this.speed -= this.acceleration;
     }
 }
-const jiho = new User("Jiho", "Seo");
-const neo = new User("Neo", "Anderson");
-const lewis = {
-    name: "Lewis Yang",
-    age: 85
-};
-console.log(jiho.getFullName());
-console.log(neo.getFullName());
-console.log(User.isUser(jiho));
-console.log(User.isUser(neo));
-console.log(User.isUser(lewis)) //상속과 instanceof
+//자전거
+class Bicycle extends Vehicle {
+    constructor(price = 100, acceleration){
+        super(acceleration) // super: Vehicle 클래스의 constructor 가 여기서 super로 사용됨
+        ;
+        this.price = price;
+        this.wheel = 2;
+    }
+}
+const bicycle = new Bicycle(300) //Bicycle 클래스의 constructor에 매개변수값이 감 (인스턴스)
+;
+bicycle.accelerate();
+bicycle.accelerate();
+console.log(bicycle);
+console.log(bicycle instanceof Bicycle) //bicycle 인스턴스가 어떤 클래스로부터 파생된건지 확인하고자 하는 클래스명을 적어주면됨.적은 클래스가 일치하면 true 아님 그 반대.
+;
+console.log(bicycle instanceof Vehicle) // 위의 bicycle 인스턴스는 Bicycle 클래스에서 만들어 졌지만, Bicycle 클래스가 Vehicle클래스에 상속되서 만들어졌기에 Vehicle 클래스의 인스턴스도 됨.
+;
+//자동차
+class Car extends Bicycle {
+    constructor(license, price, acceleration){
+        super(price, acceleration);
+        this.license = license;
+        this.wheel = 4;
+    }
+    // 오버라이딩
+    accelerate() {
+        if (!this.license) {
+            console.error("무면허!");
+            return;
+        }
+        this.speed += this.acceleration;
+        console.log("가속!", this.speed);
+    }
+}
+const carA = new Car(true, 7000, 10);
+const carB = new Car(false, 4000, 6);
+carA.accelerate();
+carA.accelerate();
+carB.accelerate();
+console.log(carA instanceof Car) // 인스턴스는, 만들어진 클래스의 인스턴스이지만, 만들어진 클래스에서 상속한 클래스의 인스턴스이기도 하다!
+;
+console.log(carB instanceof Car) //(... instanceof Bicycle 또는 Vehicle) 도 true값이 나옴.
+;
+class Boat extends Vehicle {
+    constructor(price, acceleration){
+        super(acceleration);
+        this.price = price;
+        this.motor = 1;
+    }
+}
+const boat = new Boat(10000, 5);
+console.log(boat instanceof Boat) //true,Vehicle 클래스의 인스턴스
+;
+console.log(boat instanceof Bicycle) //false, Boat는 바로 위대의 Vehicle 클래스를 상속받아서 Bicycle,car 클래스의 인스턴스가 아님!
 ;
 
 },{}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
