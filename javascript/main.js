@@ -730,6 +730,21 @@
 
 
 
+class User {
+  constructor(first, last) {
+    this.firstName = first
+    this.lastName = last
+  }
+  getFullName() { 
+    return `${this.firstName} ${this.lastName}`
+  }
+}
+
+const jiho = new User('Jiho', 'Seo')
+const neo = new User('Neo', 'Anderson')
+
+console.log(jiho)
+console.log(neo)
 
 
 

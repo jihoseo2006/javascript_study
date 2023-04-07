@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"9ZIyz":[function(require,module,exports) {
+})({"3tJLW":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -1107,7 +1107,20 @@ function hmrAccept(bundle, id) {
 // jiho.fullName = 'Neo Anderson' //set의 개념. 이 값은 value에 매개변수로 들어감.
 // console.log(jiho)
 //정적 메소드
+class User {
+    constructor(first, last){
+        this.firstName = first;
+        this.lastName = last;
+    }
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+const jiho = new User("Jiho", "Seo");
+const neo = new User("Neo", "Anderson");
+console.log(jiho);
+console.log(neo);
 
-},{}]},["9ZIyz","adjPd"], "adjPd", "parcelRequirebaba")
+},{}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
 
 //# sourceMappingURL=index.63aff760.js.map
