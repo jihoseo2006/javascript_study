@@ -1115,11 +1115,23 @@ class User {
     getFullName() {
         return `${this.firstName} ${this.lastName}`;
     }
+    static isUser(user) {
+        if (user.firstName && user.lastName) return true;
+        return false;
+    }
 }
 const jiho = new User("Jiho", "Seo");
 const neo = new User("Neo", "Anderson");
-console.log(jiho);
-console.log(neo);
+const lewis = {
+    name: "Lewis Yang",
+    age: 85
+};
+console.log(jiho.getFullName());
+console.log(neo.getFullName());
+console.log(User.isUser(jiho));
+console.log(User.isUser(neo));
+console.log(User.isUser(lewis)) //상속과 instanceof
+;
 
 },{}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
 

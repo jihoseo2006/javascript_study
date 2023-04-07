@@ -735,20 +735,32 @@ class User {
     this.firstName = first
     this.lastName = last
   }
-  getFullName() { 
+  getFullName() { //일반(혹은 프로토타입) 메소드는 기본적으로 인스턴스에서 사용함.
     return `${this.firstName} ${this.lastName}`
+  }
+  static isUser(user) {// 정적 메소드, 클래스에서만 사용 가능하고 인스턴스는 사용 불가
+    if (user.firstName && user.lastName) {
+      return true
+    }
+    return false
   }
 }
 
 const jiho = new User('Jiho', 'Seo')
 const neo = new User('Neo', 'Anderson')
+const lewis = {
+  name: 'Lewis Yang',
+  age: 85
+}
 
-console.log(jiho)
-console.log(neo)
+console.log(jiho.getFullName())
+console.log(neo.getFullName())
+console.log(User.isUser(jiho))
+console.log(User.isUser(neo))
+console.log(User.isUser(lewis))
 
 
-
-
+//상속과 instanceof
 
 
 
