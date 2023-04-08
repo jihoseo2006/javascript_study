@@ -1135,78 +1135,99 @@ function hmrAccept(bundle, id) {
 // console.log(User.isUser(lewis))
 //상속과 instanceof
 //운송수단
-class Vehicle {
-    constructor(acceleration = 1){
-        this.speed = 0;
-        this.acceleration = acceleration;
+// class Vehicle {
+//   constructor(acceleration = 1) {
+//     this.speed = 0
+//     this.acceleration = acceleration
+//   }
+//   accelerate() {
+//     this.speed += this.acceleration
+//   }
+//   decelerate() {
+//     if(this.speed <= 0) {
+//       console.log('정지!')
+//       return
+//     }
+//     this.speed -= this.acceleration
+//   }
+// }
+// //자전거
+// class Bicycle extends Vehicle {  //extends:상속(또는 확장) Vehicle 클래스를 상속받음
+//   constructor(price = 100, acceleration) {
+//     super(acceleration) // super: Vehicle 클래스의 constructor 가 여기서 super로 사용됨
+//     this.price = price
+//     this.wheel = 2
+//   }
+// }
+// const bicycle = new Bicycle(300) //Bicycle 클래스의 constructor에 매개변수값이 감 (인스턴스)
+// bicycle.accelerate()
+// bicycle.accelerate()
+// console.log(bicycle)
+// console.log(bicycle instanceof Bicycle) //bicycle 인스턴스가 어떤 클래스로부터 파생된건지 확인하고자 하는 클래스명을 적어주면됨.적은 클래스가 일치하면 true 아님 그 반대.
+// console.log(bicycle instanceof Vehicle) // 위의 bicycle 인스턴스는 Bicycle 클래스에서 만들어 졌지만, Bicycle 클래스가 Vehicle클래스에 상속되서 만들어졌기에 Vehicle 클래스의 인스턴스도 됨.
+// //자동차
+// class Car extends Bicycle {
+//   constructor(license, price, acceleration) {
+//     super(price, acceleration)
+//     this.license = license
+//     this.wheel = 4
+//   }
+//   // 오버라이딩
+//   accelerate() { // accelerate 함수를 재정의함!
+//     if (!this.license) { // 라이센스가 없으면 실행
+//       console.error('무면허!')
+//       return
+//     }
+//     this.speed += this.acceleration
+//     console.log('가속!', this.speed)
+//   }
+// }
+// const carA = new Car(true, 7000, 10)
+// const carB = new Car(false, 4000, 6)
+// carA.accelerate()
+// carA.accelerate()
+// carB.accelerate()
+// console.log(carA instanceof Car) // 인스턴스는, 만들어진 클래스의 인스턴스이지만, 만들어진 클래스에서 상속한 클래스의 인스턴스이기도 하다!
+// console.log(carB instanceof Car) //(... instanceof Bicycle 또는 Vehicle) 도 true값이 나옴.
+// class Boat extends Vehicle {
+//   constructor(price, acceleration) {
+//     super(acceleration)
+//     this.price = price
+//     this.motor  = 1
+//   }
+// }
+// const boat = new Boat(10000, 5)
+// console.log(boat instanceof Boat) //true,Vehicle 클래스의 인스턴스
+// console.log(boat instanceof Bicycle) //false, Boat는 바로 위대의 Vehicle 클래스를 상속받아서 Bicycle,car 클래스의 인스턴스가 아님!
+//instanceof 와 constructor(생성자) 4.8 학습 시작
+class A {
+    constructor(){}
+}
+class B extends A {
+    constructor(){
+        super();
     }
-    accelerate() {
-        this.speed += this.acceleration;
-    }
-    decelerate() {
-        if (this.speed <= 0) {
-            console.log("정지!");
-            return;
-        }
-        this.speed -= this.acceleration;
+} //기본적인 상속 코드
+class C extends B {
+    constructor(){
+        super();
     }
 }
-//자전거
-class Bicycle extends Vehicle {
-    constructor(price = 100, acceleration){
-        super(acceleration) // super: Vehicle 클래스의 constructor 가 여기서 super로 사용됨
-        ;
-        this.price = price;
-        this.wheel = 2;
-    }
-}
-const bicycle = new Bicycle(300) //Bicycle 클래스의 constructor에 매개변수값이 감 (인스턴스)
+const a = new A() //인스턴스 = 거푸집으로 찍어낸 칼
 ;
-bicycle.accelerate();
-bicycle.accelerate();
-console.log(bicycle);
-console.log(bicycle instanceof Bicycle) //bicycle 인스턴스가 어떤 클래스로부터 파생된건지 확인하고자 하는 클래스명을 적어주면됨.적은 클래스가 일치하면 true 아님 그 반대.
+const b = new B();
+const c = new C();
+console.log(c instanceof A);
+console.log(c instanceof B);
+console.log(c instanceof C);
+console.log(c.constructor === A);
+console.log(c.constructor === B);
+console.log(c.constructor === C) // 인스턴스가 어느부분에서 만들어진건지 확인할거면 .constructor 와 클래스를 일치연산자로 비교!
 ;
-console.log(bicycle instanceof Vehicle) // 위의 bicycle 인스턴스는 Bicycle 클래스에서 만들어 졌지만, Bicycle 클래스가 Vehicle클래스에 상속되서 만들어졌기에 Vehicle 클래스의 인스턴스도 됨.
-;
-//자동차
-class Car extends Bicycle {
-    constructor(license, price, acceleration){
-        super(price, acceleration);
-        this.license = license;
-        this.wheel = 4;
-    }
-    // 오버라이딩
-    accelerate() {
-        if (!this.license) {
-            console.error("무면허!");
-            return;
-        }
-        this.speed += this.acceleration;
-        console.log("가속!", this.speed);
-    }
-}
-const carA = new Car(true, 7000, 10);
-const carB = new Car(false, 4000, 6);
-carA.accelerate();
-carA.accelerate();
-carB.accelerate();
-console.log(carA instanceof Car) // 인스턴스는, 만들어진 클래스의 인스턴스이지만, 만들어진 클래스에서 상속한 클래스의 인스턴스이기도 하다!
-;
-console.log(carB instanceof Car) //(... instanceof Bicycle 또는 Vehicle) 도 true값이 나옴.
-;
-class Boat extends Vehicle {
-    constructor(price, acceleration){
-        super(acceleration);
-        this.price = price;
-        this.motor = 1;
-    }
-}
-const boat = new Boat(10000, 5);
-console.log(boat instanceof Boat) //true,Vehicle 클래스의 인스턴스
-;
-console.log(boat instanceof Bicycle) //false, Boat는 바로 위대의 Vehicle 클래스를 상속받아서 Bicycle,car 클래스의 인스턴스가 아님!
-;
+// const fruits =['Apple','Banana'] // fruits배열은 Array클래스의 하나의 인스턴스임!
+const fruits = new Array("Apple", "Banana");
+console.log(fruits.constructor === Array);
+console.log(fruits instanceof Array);
 
 },{}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
 
