@@ -833,55 +833,93 @@
 
 //instanceof 와 constructor(생성자) 4.8 학습 시작
 
-class A {
-  constructor() { //생성자 함수 = 거푸집
+// class A {
+//   constructor() { //생성자 함수 = 거푸집
 
-  }
-}
+//   }
+// }
 
-class B extends A { //extends => 상속 키워드 B클래스는 A클래스의 내용을 상속받음.
-  constructor() {
-    super()
-  }
-} //기본적인 상속 코드
+// class B extends A { //extends => 상속 키워드 B클래스는 A클래스의 내용을 상속받음.
+//   constructor() {
+//     super()
+//   }
+// } //기본적인 상속 코드
 
-class C extends B { //C클래스는 B클래스의 내용을 상속받음.
-  constructor() {
-    super()
-  }
-} 
+// class C extends B { //C클래스는 B클래스의 내용을 상속받음.
+//   constructor() {
+//     super()
+//   }
+// } 
 
-const a = new A() //인스턴스 = 거푸집으로 찍어낸 칼
-const b = new B() 
-const c = new C() 
+// const a = new A() //인스턴스 = 거푸집으로 찍어낸 칼
+// const b = new B() 
+// const c = new C() 
 
-console.log(c instanceof A) 
-console.log(c instanceof B) 
-console.log(c instanceof C) 
+// console.log(c instanceof A) 
+// console.log(c instanceof B) 
+// console.log(c instanceof C) 
 
-console.log(c.constructor === A)
-console.log(c.constructor === B)
-console.log(c.constructor === C) // 인스턴스가 어느부분에서 만들어진건지 확인할거면 .constructor 와 클래스를 일치연산자로 비교!
+// console.log(c.constructor === A)
+// console.log(c.constructor === B)
+// console.log(c.constructor === C) // 인스턴스가 어느부분에서 만들어진건지 확인할거면 .constructor 와 클래스를 일치연산자로 비교!
 
-// const fruits =['Apple','Banana'] // fruits배열은 Array클래스의 하나의 인스턴스임!
-const fruits = new Array('Apple','Banana')
+// // const fruits =['Apple','Banana'] // fruits배열은 Array클래스의 하나의 인스턴스임!
+// const fruits = new Array('Apple','Banana')
 
-console.log(fruits.constructor === Array)
-console.log(fruits instanceof Array)
+// console.log(fruits.constructor === Array)
+// console.log(fruits instanceof Array)
 
+//Ch 06. 표준 내장 객체
 
-
-
-
-
+//문자
 
 
+//.length
+//문자의 길이 (숫자)를 반환함
+// const str = 'Hello world!'
+
+// console.log(str.length)
 
 
+//.includes()
+// 대상 문자에 주어진 문자가 포함되어있는지(불린) 확인함/
+// const str = 'Hello world!'
+
+// console.log(str.includes('Hello', 0))
 
 
+//.indexOf()
+//대상 문자에서 주어진 문자와 일치하는 첫 번째 인덱스(숫자)를 반환함.
+//일치하는 문자가 없으면 '-1'을 반환함.
+
+// const str = 'Hello world!'
+
+// console.log(str.indexOf('!'))
+// console.log(str.indexOf('jiho'))
+
+// if(!str.includes('jiho')) {
+//   console.log('jiho 가 없습니다.')
+// }
 
 
+// .padEnd()
+// 대상 문자의 길이(length)가 지정된 길이보다 작으면,
+// 주어진 문자를 지정된 길이까지 끝에 붙여 새로운 문자를 반환함.
+
+// const str = '12345'
+
+// console.log(str.padEnd(10, '!'))
+// console.log(str)
+
+
+// .padStart()
+// 대상 문자의 길이(length)가 지정된 길이보다 작으면,
+// 주어진 문자를 지정된 길이까지 앞에 붙여 새로운 문자를 반환함.
+
+const str = '1234567890123'
+
+console.log(str.padStart(10, '0'))
+console.log(str)
 
 
 
