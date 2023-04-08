@@ -1364,10 +1364,83 @@ function hmrAccept(bundle, id) {
 // console.log(random(101,999))
 // Math.round()
 // 주어진 숫자를 반올림해 정수를 반환함.
-const num1 = 3.141;
-const num2 = 3.768;
-console.log(Math.round(num1));
-console.log(Math.round(num2));
+// const num1 = 3.141
+// const num2 = 3.768
+// console.log(Math.round(num1))
+// console.log(Math.round(num2))
+// 날짜
+// const date = new Date()
+// console.log(date)
+// // 타임스탬프
+// const d1 = new Date(2023, 3, 8, 9, 7, 40) //js는 월은 0부터 계산함!
+// console.log(d1)
+// const d2 = new Date('Sat Apr 08 2023 09:07:40 GMT+0900 (한국 표준시)')
+// console.log(d2)
+// console.log(d2.getFullYear()) //연도만 반환
+// .gerFullyear()와 .setFullYear()
+// 날짜 인스턴스와 '연도'를 반환하거나 지정한다.
+// const date = new Date()
+// console.log(date.getFullYear())
+// date.setFullYear(2023)
+// console.log(date.getFullYear())
+// console.log(date)
+// .getMonth()와 .setMonth()
+// 날짜 인스턴스의 '월'을 반환하거나 지정한다.
+// 0부터 시작함(제로 베이스드 넘버링)
+// const date = new Date()
+// console.log(date.getMonth())
+// console.log(date)
+// date.setMonth(0)
+// console.log(date.getMonth())
+// console.log(date)
+// .getDate()와 .setDate()
+// 날짜 인스턴스의 '일'을 반환하거나 지정한다.
+// const date = new Date()
+// console.log(date.getDate())
+// console.log(date)
+// date.setDate(11)
+// console.log(date.getDate())
+// console.log(date)
+// // .getHours()와 .setHours()
+// // 날짜 인스턴스의 '시간'을 반환하거나 지정한다.
+// const date = new Date()
+// console.log(date.getHours())
+// console.log(date)
+// date.setHours(7)
+// console.log(date.getHours())
+// console.log(date)
+// .getSeconds()와 .setSeconds()
+// 날짜 인스턴스의 '초'을 반환하거나 지정한다.
+// const date = new Date()
+// console.log(date.getSeconds())
+// console.log(date)
+// date.setSeconds(57)
+// console.log(date.getSeconds())
+// console.log(date)
+// .getDay
+// 날짜 인스턴스의 '요일'을 반환함.
+const date = new Date();
+const day = date.getDay();
+console.log(day);
+console.log(getDayKo(day));
+function getDayKo(day) {
+    switch(day){
+        case 0:
+            return "일요일";
+        case 1:
+            return "월요일";
+        case 2:
+            return "화요일";
+        case 3:
+            return "수요일";
+        case 4:
+            return "목요일";
+        case 5:
+            return "금요일";
+        case 6:
+            return "토요일";
+    }
+}
 
 },{}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
 
