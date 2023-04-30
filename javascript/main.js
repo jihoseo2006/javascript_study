@@ -1196,28 +1196,52 @@
 // .getDay
 // 날짜 인스턴스의 '요일'을 반환함.
 
-const date = new Date()
-const day = date.getDay()
+// const date = new Date()
+// const day = date.getDay()
 
-console.log(day)
-console.log(getDayKo(day))
+// console.log(day)
+// console.log(getDayKo(day))
 
-function getDayKo(day) {
-  switch (day) {
-    case 0: return '일요일'
-    case 1: return '월요일'
-    case 2: return '화요일'
-    case 3: return '수요일'
-    case 4: return '목요일'
-    case 5: return '금요일'
-    case 6: return '토요일'
-  }
+// function getDayKo(day) {
+//   switch (day) {
+//     case 0: return '일요일'
+//     case 1: return '월요일'
+//     case 2: return '화요일'
+//     case 3: return '수요일'
+//     case 4: return '목요일'
+//     case 5: return '금요일'
+//     case 6: return '토요일'
+//   }
+// }
+
+//.getTime()와 .setTime()
+//1970-01-01 00:00:00` (유닉스타임)부터 경과한,
+//날짜 인스턴스의 '밀리초(ms)'로 반환하거나 지정한다.
+
+// const date = new Date()
+
+// console.log(date.getTime())
+// console.log(date)
+
+// date.setTime(1700000000000)
+// console.log(date.getTime())
+// console.log(date)
+
+//예제
+
+Date.prototype.isAfter = function (date) {
+  const a = this.getTime()
+  const b = date.getTime()
+  console.log(a)
+  console.log(b)
+  return a > b
 }
 
+const d1 = new Date('Sun Apr 30 2023 00:00:00 GMT+0900(한국 표준시)')
+const d2 = new Date('Mon Apr 30 2024 00:00:00 GMT+0900(한국 표준시)')
 
-
-
-
+console.log(d1.isAfter(d2)) //false
+console.log(d2.isAfter(d1)) //true
 
 
 
