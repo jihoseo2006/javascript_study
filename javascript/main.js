@@ -1229,25 +1229,54 @@
 
 //예제
 
-Date.prototype.isAfter = function (date) {
-  const a = this.getTime()
-  const b = date.getTime()
-  console.log(a)
-  console.log(b)
-  return a > b
-}
+// Date.prototype.isAfter = function (date) {
+//   const a = this.getTime()
+//   const b = date.getTime()
+//   console.log(a)
+//   console.log(b)
+//   return a > b
+// }
 
-const d1 = new Date('Sun Apr 30 2023 00:00:00 GMT+0900(한국 표준시)')
-const d2 = new Date('Mon Apr 30 2024 00:00:00 GMT+0900(한국 표준시)')
+// const d1 = new Date('Sun Apr 30 2023 00:00:00 GMT+0900(한국 표준시)')
+// const d2 = new Date('Mon Apr 30 2024 00:00:00 GMT+0900(한국 표준시)')
 
-console.log(d1.isAfter(d2)) //false
-console.log(d2.isAfter(d1)) //true
+// console.log(d1.isAfter(d2)) //false
+// console.log(d2.isAfter(d1)) //true
+
+// Date.now()
+// `1970-018-01 00:00:00`(유닉스타임)부터 경과한,
+// 메소드가 호출될 때의 '밀리초(ms)'로 반환합니다.
+
+// const time = new Date().getTime()
+// console.log(Date.now())
+// console.log(time)
+
+// setTimeout(() => {
+//   console.log(Date.now())
+//   console.log(time)
+// }, 1000)
+
+//배열
+
+//.length
+//배열의 길이(숫자)를 반환합니다.
+
+//  const arr =['A','B','C']
+
+//  console.log(arr.length)
 
 
+//.at()
+// 대상 배열을 인덱싱함.
+// 음수 값을 사용하면 뒤에서부터 인덱싱.
 
+const arr =['A','B','C']
 
+console.log(arr[0])
+console.log(arr.at(0))
 
-
+console.log(arr[arr.length - 1])
+console.log(arr.at(-1))
 
 
 
