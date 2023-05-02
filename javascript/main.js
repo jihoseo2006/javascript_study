@@ -1268,19 +1268,35 @@
 
 //.at()
 // 대상 배열을 인덱싱함.
-// 음수 값을 사용하면 뒤에서부터 인덱싱.
+// 음수 값을 사용하면 뒤에서부터 인덱싱한다.
 
-const arr =['A','B','C']
+// const arr =['A','B','C','D']
 
-console.log(arr[0])
-console.log(arr.at(0))
+// console.log(arr[0])
+// console.log(arr.at(0))
 
-console.log(arr[arr.length - 1])
-console.log(arr.at(-1))
+// console.log(arr[arr.length - 2])
+// console.log(arr.at(-2))
 
+//.concat() 메소드
+// 대상 배열과 주어진 배열을 병합해 새로운 배열을 반환한다.
 
+// const arr1 = ['A','B','C']
+// const arr2 = ['D','E','F']
+// // const arr3 = arr1.concat(arr2) // 배열 병합을 해도 원본 배열에 변화는 없음!
+// // const arr3 = [...arr1, ...arr2] //.concat() 대신 전개 연산자 사용 방법으로도 구현 가능하다.
 
+// console.log(arr1)
+// console.log(arr2)
+// console.log(arr3)
 
+// .every()
+// 대상 배열의 모든 요소가 콜백 테스트에서 참(Truthy)을 반환하는지 확인한다.
+
+const arr = [1,2,3,4]
+const isValid = arr.every(item => item < 5)
+
+console.log(isValid)//모든 테스트가 참일시 true, 하나라도 실패한다면 false.
 
 
 
