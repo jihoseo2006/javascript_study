@@ -1489,15 +1489,31 @@ function hmrAccept(bundle, id) {
 // console.log(arr3)
 // .every()
 // 대상 배열의 모든 요소가 콜백 테스트에서 참(Truthy)을 반환하는지 확인한다.
-const arr = [
-    1,
-    2,
-    3,
-    4
+// const arr = [1,2,3,4]
+// const isValid = arr.every(item => item < 5)
+// console.log(isValid)//모든 테스트가 참일시 true, 하나라도 실패한다면 false.
+// .filter()
+// 주어진 콜백 테스트를 통과(참(Truthy)을 반환)하는 모든 요소를 새로운 배열로 반환함.
+// 모든 요소가 테스트를 통과하지 못하면 빈 배열을 반환함.
+// const numbers = [1, 20, 7, 9 ,104, 0 ,58]
+// const filterNumbers = numbers.filter(number => number < 0)
+// console.log(filterNumbers)
+const users = [
+    {
+        name: "Neo",
+        age: 85
+    },
+    {
+        name: "Amy",
+        age: 22
+    },
+    {
+        name: "Lewis",
+        age: 11
+    }
 ];
-const isValid = arr.every((item)=>item < 5);
-console.log(isValid) //모든 테스트가 참일시 true, 하나라도 실패한다면 false.
-;
+const adults = users.filter((user)=>user.age >= 19);
+console.log(adults);
 
 },{}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
 
