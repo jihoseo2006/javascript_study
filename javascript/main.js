@@ -1380,29 +1380,73 @@
 
 //예제 2
 
-const users = [
-    { name: 'Neo', age: 85},
-    { name: 'Amy', age: 22},
-    { name: 'Lewis', age: 11}
-  ]
-console.log(users.includes({name: 'Neo', age: 85 }))
+// const users = [
+//     { name: 'Neo', age: 85},
+//     { name: 'Amy', age: 22},
+//     { name: 'Lewis', age: 11}
+//   ]
+// console.log(users.includes({name: 'Neo', age: 85 }))
 
-const neo = users[0]
-console.log(users.includes(neo))
+// const neo = users[0]
+// console.log(users.includes(neo))
 
+//.join()
+// 대상 배열의 모든 요소를 구분자로 연결한 문자를 반환함.
 
+// const arr = ['Apples', 'Banana', 'Cherry']
 
-
-
-
-
-
-
-
-
+// console.log(arr.join(','))
+// console.log(arr.join(', '))
+// console.log(arr.join('/'))
 
 
+// .map()
+// 대상 배열의 길이만큼 주어진 콜백을 실행하고, 콜백의 반환 값을 모아 새로운 배열을 반환한다.
 
+// const numbers = [1,2,3,4]
+// const newNumbers = numbers.map(item => item * 2)
+
+// console.log(newNumbers)
+// console.log(numbers)
+
+//예제
+
+// const users =  [
+//   { name: 'Neo', age: 85},
+//   { name: 'Amy', age: 22},
+//   { name: 'Lewis', age: 11},  
+// ]
+// const newUsers = users.map(user => {
+//   return {
+//     ...user,
+//     isValid: true,
+//     email: null
+//   }
+// })
+
+// console.log(newUsers)
+
+// .pop()
+// 대상 배열에서 마지막 요소를 제거하고 그 요소를 반환함.
+// 대산 배열 원본이 번경됨.
+
+// const fruits = ['Apple', 'Banana', 'Cherry']
+
+// console.log(fruits.pop())
+// console.log(fruits)
+
+// .push()
+// 대상 배열의 마지막에 하나 이상의 요소를 추가하고, 배열의 새로운 길이를 반환함.
+// 대상 배열 원본이 번경됨.
+
+const fruits = ['Apple', 'Banana', 'Cherry']
+
+const newLength = fruits.push('Orange')
+console.log(newLength)
+console.log(fruits)
+
+fruits.push('Mango', 'Strawberry')
+console.log(fruits)
 
 
 
