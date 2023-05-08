@@ -1592,16 +1592,51 @@ function hmrAccept(bundle, id) {
 // .push()
 // 대상 배열의 마지막에 하나 이상의 요소를 추가하고, 배열의 새로운 길이를 반환함.
 // 대상 배열 원본이 번경됨.
-const fruits = [
-    "Apple",
-    "Banana",
-    "Cherry"
+// const fruits = ['Apple', 'Banana', 'Cherry']
+// const newLength = fruits.push('Orange')
+// console.log(newLength)
+// console.log(fruits)
+// fruits.push('Mango', 'Strawberry')
+// console.log(fruits)
+// .reduce()
+// 대상 배열의 길이만큼 주어진 콜백을 실행하고, 마지막에 호출되는 콜백의 반환 값을 반환한다.
+// 각 콜백의 반환 값은 다음 콜백으로 전달된다.
+// const numbers = [1,2,3,4,5,6]
+// const sum = numbers.reduce((acc, cur) => acc + cur, 0)
+// console.log(sum)
+//예제
+// const users = [
+//   { name: "Neo", age: 85},
+//   { name: "Amy", age: 22},
+//   { name: "Lewis", age: 11},
+// ]
+// //총 나이 계산
+// const totalAge = users.reduce((acc, cur) => acc + cur.age, 0)
+// console.log(totalAge)
+// console.log(`평균 나이: ${(totalAge / users.length).toFixed(1)}세`) // 평균 나이
+// //모든 이름 추출
+// const names = users.reduce((acc, cur) => {
+//   acc.push(cur.name)
+//     return acc
+//   }, []).join(', ') //메소드 체이닝으로 join 메소드 사용
+// console.log(names)
+// .reverse()
+// 대상 배열의 순서를 반전함.
+// 대상 배열 원본이 번경됨
+//  const arr = ['A', 'B', 'C']
+//  const reversed = arr.reverse()
+//  console.log(reversed)
+//  console.log(arr)
+// .shift()
+// 대상 배열에서 첫 번째 요소를 제거하고, 제거된 요소를 반환한다.
+// 대상 배열 원본이 번경됨.
+const arr = [
+    "A",
+    "B",
+    "C"
 ];
-const newLength = fruits.push("Orange");
-console.log(newLength);
-console.log(fruits);
-fruits.push("Mango", "Strawberry");
-console.log(fruits);
+console.log(arr.shift());
+console.log(arr);
 
 },{}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
 
