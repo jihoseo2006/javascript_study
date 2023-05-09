@@ -1492,11 +1492,21 @@
 // 대상 배열에서 첫 번째 요소를 제거하고, 제거된 요소를 반환한다.
 // 대상 배열 원본이 번경됨.
 
-const arr = ['A', 'B', 'C']
+// const arr = ['A', 'B', 'C']
 
-console.log(arr.shift())
-console.log(arr)
+// console.log(arr.shift())
+// console.log(arr)
 
+// .slice()
+// 대상 배열의 일부를 추출해 새로운 배열을 변환함.
+// 두 번쨰 인수 직전까지 추출하고, 두 번째 인수를 생략하면 배열의 끝까지 추출한다.
+
+// const arr = ['A','B','C','D','E','F','G']
+
+// console.log(arr.slice(0,3))
+// console.log(arr.slice(4,-1))
+// console.log(arr.slice(4))
+// console.log(arr)
 
 
 
