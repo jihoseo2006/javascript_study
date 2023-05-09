@@ -1508,10 +1508,29 @@
 // console.log(arr.slice(4))
 // console.log(arr)
 
+// .some() 
+// 대상 배열의 어떤 요소라도 콜백 테스트를 통과하는지 확인함.
 
+// const arr = [1,2,3,4]
+// const isValid = arr.some(item => item > 4)
 
+// console.log(isValid)
 
+// .sort()
+// 대상 배열을 콜백의 반환 값(음수, 양수, 0)에 따라 정렬합니다.
+// 콜백을 제공하지 않으면, 요소를 문자열로 변환하고 유니코드 코드 포인트 순서로 정렬함
+// 대상 배열 원본이 변경됨.
 
+const numbers = [4,17,2,103,3,1,0]
+
+numbers.sort()
+console.log(numbers)
+
+numbers.sort((a,b) => a - b)
+console.log(numbers)
+
+numbers.sort((a,b) => b - a)
+console.log(numbers)
 
 
 
