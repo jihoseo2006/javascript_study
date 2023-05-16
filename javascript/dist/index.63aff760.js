@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"3tJLW":[function(require,module,exports) {
+})({"9ZIyz":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -1666,6 +1666,6 @@ console.log(numbers);
 numbers.sort((a, b)=>b - a);
 console.log(numbers);
 
-},{}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
+},{}]},["9ZIyz","adjPd"], "adjPd", "parcelRequirebaba")
 
 //# sourceMappingURL=index.63aff760.js.map
