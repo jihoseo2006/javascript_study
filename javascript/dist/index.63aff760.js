@@ -1650,21 +1650,30 @@ function hmrAccept(bundle, id) {
 // 대상 배열을 콜백의 반환 값(음수, 양수, 0)에 따라 정렬합니다.
 // 콜백을 제공하지 않으면, 요소를 문자열로 변환하고 유니코드 코드 포인트 순서로 정렬함
 // 대상 배열 원본이 변경됨.
-const numbers = [
-    4,
-    17,
-    2,
-    103,
-    3,
-    1,
-    0
+// const numbers = [4,17,2,103,3,1,0]
+// numbers.sort()
+// console.log(numbers)
+// numbers.sort((a,b) => a - b)
+// console.log(numbers)
+// numbers.sort((a,b) => b - a)
+// console.log(numbers)
+//예제
+const users = [
+    {
+        name: "Neo",
+        age: 85
+    },
+    {
+        name: "Amy",
+        age: 22
+    },
+    {
+        name: "Lewis",
+        age: 11
+    }
 ];
-numbers.sort();
-console.log(numbers);
-numbers.sort((a, b)=>a - b);
-console.log(numbers);
-numbers.sort((a, b)=>b - a);
-console.log(numbers);
+users.sort((a, b)=>a.age - b.age);
+console.log(users);
 
 },{}]},["9ZIyz","adjPd"], "adjPd", "parcelRequirebaba")
 
