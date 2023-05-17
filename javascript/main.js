@@ -1534,21 +1534,33 @@
 
 //예제
 
-const users = [
-  {name: 'Neo', age: 85},
-  {name: 'Amy', age: 22},
-  {name: 'Lewis', age: 11}
-]
+// const users = [
+//   {name: 'Neo', age: 85},
+//   {name: 'Amy', age: 22},
+//   {name: 'Lewis', age: 11}
+// ]
 
-users.sort((a,b) => a.age - b.age)
-console.log(users)
+// // 나이가 적은 순부터
+// users.sort((a, b) => a.age - b.age)
+// console.log(users)
+// // 나이가 많은 순부터
+// users.sort((a, b) => b.age - a.age)
+// console.log(users)
 
+// .splice()
+// 대상 배열의 요소를 추가하거나 삭제하거나 교체한다.
+// 대상 배열 원본이 번경됨.
 
+// const arr = ['A', 'B', 'C']
+// arr.splice(2, 0, 'X') //arr.splice(시작할 위치, 제거할 개수, 추가할 인수)
 
+// console.log(arr)
 
+//예제
+const arr = ['A', 'B', 'C']
+arr.splice(1, 1, 'X')
 
-
-
+console.log(arr)
 
 
 
