@@ -1557,17 +1557,49 @@
 // console.log(arr)
 
 //예제
-const arr = ['A', 'B', 'C']
-arr.splice(1, 1, 'X')
+// const arr = ['A', 'B', 'C']
+// arr.splice(1, 1, 'X')
 
-console.log(arr)
+// console.log(arr)
+
+// .unshift()
+// 새로운 요소를 대상 배열의 맨 앞에 추가하고 새로운 배열의 길이를 반환함.
+// 대상 배열 원본이 번경됨.
+
+// const arr = ['A', 'B', 'C']
+
+// console.log(arr.unshift('X'))
+// console.log(arr)
 
 
+// Array.from()
+// 유사 배열(Array-like) 을 실제 배열로 반환함.
 
+// const arrayLike = {
+//   0: 'A',
+//   1: 'B',
+//   2: 'C',
+//   length: 3
+// }
 
+// console.log(arrayLike.constructor === Array)
+// console.log(arrayLike.constructor === Object)
 
+// Array.from(arrayLike).forEach(item => console.log(item))
 
+// Array.isArray()
+// 배열 데이터인지 확인함.
 
+const array = ['A', 'B', 'C']
+const arraylike = {
+  0: 'A',
+  1: 'B',
+  2: 'C',
+  length: 3
+}
+
+console.log(Array.isArray(array))
+console.log(Array.isArray(arraylike))
 
 
 
