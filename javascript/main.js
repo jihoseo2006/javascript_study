@@ -1590,17 +1590,30 @@
 // Array.isArray()
 // 배열 데이터인지 확인함.
 
-const array = ['A', 'B', 'C']
-const arraylike = {
-  0: 'A',
-  1: 'B',
-  2: 'C',
-  length: 3
-}
+// const array = ['A', 'B', 'C']
+// const arraylike = {
+//   0: 'A',
+//   1: 'B',
+//   2: 'C',
+//   length: 3
+// }
 
-console.log(Array.isArray(array))
-console.log(Array.isArray(arraylike))
+// console.log(Array.isArray(array))
+// console.log(Array.isArray(arraylike))
 
+
+//객체
+
+// Object.assign()
+// 하나 이상의 출처(Source) 객체로부터 대상(Target) 객체로 속성을 복사하고 대상 객체롤 반환함.
+
+const target = { a: 1, b:2 }
+const source1 = { b: 3, c:4 }
+const source2 = { a: 1, b:2 }
+const result = Object.assign(target, source1, source2)
+
+console.log(target)
+console.log(result)
 
 
 
