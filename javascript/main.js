@@ -20,11 +20,8 @@
 //   age: 20
 // }
 
-
-
 // console.log(user.name)
 // console.log(user['name'])
-
 
 // const userA = {
 //   name: 'jiho',
@@ -51,7 +48,7 @@
 // b(a)
 
 //형 변환
- 
+
 // const a = true
 // const b = 1
 
@@ -59,8 +56,6 @@
 
 // === 일치 연산자
 // == 동등 연산자
-
-
 
 // //참과 거짓(Truthy&Falsy)
 // //1) false
@@ -70,7 +65,6 @@
 // //5)NaN
 // //6)''
 // //7)0n
-
 
 // if(1) {
 //   console.log('참!')
@@ -116,8 +110,6 @@
 
 // fn(...a)
 
-
-
 // 구조 분해 할당
 
 // let b = 0
@@ -126,9 +118,9 @@
 // // const a = arr[0]
 // // const b = arr[1]
 // // const c = arr[2]
-// ;[,, c] = arr 
+// ;[,, c] = arr
 // const arr = [1, 2, 3]
-// const [a,rest] = arr 
+// const [a,rest] = arr
 
 // console.log(a, rest)
 
@@ -144,11 +136,9 @@
 //   y:100
 // }
 
-
 // const { c, ...rest } = obj
 
 // console.log(c, rest)
-
 
 // 선택적 체이닝:남용하지 말고 꼭 필요할떄만!
 
@@ -231,7 +221,6 @@
 //   console.log(i)
 // }
 
-
 //for of 반복문
 
 // const fruits = ['Apple', 'Banana', 'Cherry']
@@ -250,7 +239,7 @@
 //   {
 //     name: 'jiho',
 //     age: 18
-//   }, 
+//   },
 //   {
 //     name: 'cheho',
 //     age: 15
@@ -283,7 +272,6 @@
 //   console.log(user[key])
 // }
 
-
 //while 반복문
 
 // let n = 0
@@ -314,9 +302,8 @@
 // hello()
 
 //호이스팅
-// 함수 선언시에는 선언 전에 미리 위에 생성 처해놔라... 
+// 함수 선언시에는 선언 전에 미리 위에 생성 처해놔라...
 //선언하고 생성하면 그건 바보
-
 
 //반환 및 종료
 // function plus(num) {
@@ -339,7 +326,6 @@
 // console.log(sum(1, 2))
 // console.log(sum(7))
 
-
 // 매개변수 패턴 - 객체구조 분해 할당
 
 // const user = {
@@ -352,7 +338,7 @@
 //   return name
 // }
 
-// function getEmail({ email = '이메일이 없습니다.'}) { 
+// function getEmail({ email = '이메일이 없습니다.'}) {
 //   return email
 // }
 
@@ -385,7 +371,6 @@
 // console.log(sum(1, 2, 3, 4))
 // console.log(sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 
-
 //화살표 함수
 
 // function sum(){}
@@ -396,7 +381,7 @@
 //   return a + b
 // }
 
-// const sum = (a,b) => a + b 
+// const sum = (a,b) => a + b
 
 // console.log(sum(1,2)) //3
 // console.log(sum(10, 20)) // 30
@@ -415,7 +400,7 @@
 // const g = () => {return { a : 1 }}
 // const h = () => ({ a:1 })
 // const i = () => { return [1,2,3] }
-// const j = () => [1,2,3] 
+// const j = () => [1,2,3]
 
 //즉시실행함수(IIFE)
 
@@ -535,7 +520,6 @@
 
 // console.log(user.getFullName())
 
-
 //// 화살표 함수의 this는 자신이 선언된 함수(렉시컬== 함수가 동작할수 있는 유효한 범위) 범위에서 정의
 // function user() {
 //   this.firstname = 'Neo' // 화살표 함수의 this는 이곳을 참조함!
@@ -549,27 +533,25 @@
 //       return `${this.firstname} ${this.lastname}`
 //     }
 //   }
-// } 
-
+// }
 
 // const u = user()
 // console.log(u.getFullName())
 
-
 //일반함수 예제 2
 // function user() {
-//   this.firstname = 'Neo' 
+//   this.firstname = 'Neo'
 //   this.lastname = 'Anderson'
 
 //   return {
 //     firstname: 'jiho',
 //     lastname: 'seo',
 //     age: '18',
-//     getFullName() { 
+//     getFullName() {
 //       return `${this.firstname} ${this.lastname}`
 //     }
 //   }
-// } 
+// }
 
 // const lewis = {
 //   firstname: 'Lewis',
@@ -628,8 +610,7 @@
 // console.log(jiho.getFullName())
 // console.log(jiho.getFullName.call(neo))
 
-
-// function User(first, last) {  
+// function User(first, last) {
 //   this.firstname = first
 //   this.lastname = last
 // }
@@ -656,7 +637,6 @@
 //   return `${this.firstname} ${this.lastname}`
 // }
 
-
 //ES6 Classes 방식 예제
 // class User {
 //   constructor(first, last) {
@@ -674,7 +654,6 @@
 // console.log(jiho)
 // console.log(neo)
 
-
 // Getter, Setter
 
 // class User {
@@ -682,7 +661,7 @@
 //     this.firstname = first
 //     this.lastname = last
 //   }
-//   getfullname() { 
+//   getfullname() {
 //     return `${this.firstname} ${this.lastname}`
 //   }
 // }
@@ -702,7 +681,7 @@
 //     this.firstName = first
 //     this.lastName = last
 //   }
-//   get fullName() { //하나의 Gatter, 값을 값을 조회(받아내는)하는 메소드  
+//   get fullName() { //하나의 Gatter, 값을 값을 조회(받아내는)하는 메소드
 //     console.log('Gatting full name!')
 //     return `${this.firstName} ${this.lastName}`
 //   }
@@ -722,7 +701,6 @@
 
 // jiho.fullName = 'Neo Anderson' //set의 개념. 이 값은 value에 매개변수로 들어감.
 // console.log(jiho)
-
 
 //정적 메소드
 
@@ -754,7 +732,6 @@
 // console.log(User.isUser(jiho))
 // console.log(User.isUser(neo))
 // console.log(User.isUser(lewis))
-
 
 //상속과 instanceof
 
@@ -791,7 +768,6 @@
 // console.log(bicycle)
 // console.log(bicycle instanceof Bicycle) //bicycle 인스턴스가 어떤 클래스로부터 파생된건지 확인하고자 하는 클래스명을 적어주면됨.적은 클래스가 일치하면 true 아님 그 반대.
 // console.log(bicycle instanceof Vehicle) // 위의 bicycle 인스턴스는 Bicycle 클래스에서 만들어 졌지만, Bicycle 클래스가 Vehicle클래스에 상속되서 만들어졌기에 Vehicle 클래스의 인스턴스도 됨.
-
 
 // //자동차
 // class Car extends Bicycle {
@@ -849,15 +825,15 @@
 //   constructor() {
 //     super()
 //   }
-// } 
+// }
 
 // const a = new A() //인스턴스 = 거푸집으로 찍어낸 칼
-// const b = new B() 
-// const c = new C() 
+// const b = new B()
+// const c = new C()
 
-// console.log(c instanceof A) 
-// console.log(c instanceof B) 
-// console.log(c instanceof C) 
+// console.log(c instanceof A)
+// console.log(c instanceof B)
+// console.log(c instanceof C)
 
 // console.log(c.constructor === A)
 // console.log(c.constructor === B)
@@ -873,20 +849,17 @@
 
 //문자
 
-
 //.length
 //문자의 길이 (숫자)를 반환함
 // const str = 'Hello world!'
 
 // console.log(str.length)
 
-
 //.includes()
 // 대상 문자에 주어진 문자가 포함되어있는지(불린) 확인함/
 // const str = 'Hello world!'
 
 // console.log(str.includes('Hello', 0))
-
 
 //.indexOf()
 //대상 문자에서 주어진 문자와 일치하는 첫 번째 인덱스(숫자)를 반환함.
@@ -901,7 +874,6 @@
 //   console.log('jiho 가 없습니다.')
 // }
 
-
 // .padEnd()
 // 대상 문자의 길이(length)가 지정된 길이보다 작으면,
 // 주어진 문자를 지정된 길이까지 끝에 붙여 새로운 문자를 반환함.
@@ -910,7 +882,6 @@
 
 // console.log(str.padEnd(10, '!'))
 // console.log(str)
-
 
 // .padStart()
 // 대상 문자의 길이(length)가 지정된 길이보다 작으면,
@@ -932,10 +903,9 @@
 
 // .slice()
 // 대상 문자의 일부를 추출해 새로운 문자를 반환함.
-// 두 번째 인수 직전까지 추출하고, 두 번쨰 인수를 생략하면 대상 문자의 끝까지 추출합니다. 
+// 두 번째 인수 직전까지 추출하고, 두 번쨰 인수를 생략하면 대상 문자의 끝까지 추출합니다.
 
 // const str = 'Hello world!'
-
 
 // console.log(str.slice(0,5))
 // console.log(str.slice(6, -1))
@@ -949,14 +919,12 @@
 
 // console.log(str.split(' / '))
 
-
 // .toLowerCase()
 // 대상 문자를 영어 소문자로 변환해 새로운 문자로 반환함
 
 // const str = 'Apple, Banana, Cherry'
 // console.log(str.toLocaleLowerCase())
 // console.log(str)
-
 
 // .toUpperCase()
 // 대상 문자를 영어 대문자로 변환해 새로운 문자로 반환함
@@ -966,7 +934,6 @@
 // console.log(str.toUpperCase())
 // console.log(str)
 
-
 // .trim()
 // 대상 문자의 앞뒤 공백 문자(space, tab)등을 제거한 새로운 문자를 반환함
 
@@ -974,8 +941,6 @@
 
 // console.log(str.trim())
 // console.log(str)
-
-
 
 //숫자
 
@@ -987,7 +952,6 @@
 // console.log(num.toFixed(2))
 // console.log(parseFloat(num.toFixed(2))) //parseFloat로 문자 데이터를 숫자로 바꿈
 
-
 // .toLocaleString()
 // 숫자를 현지 언어 방식의 문자로 반환함.
 
@@ -995,7 +959,6 @@
 
 // console.log(num.toLocaleString())
 // console.log(`${num.toLocaleString()}원`)
-
 
 // Number.isInteger()
 // 숫자가 정수인지 확인한다.
@@ -1005,7 +968,6 @@
 
 // console.log(Number.isInteger(num))
 // console.log(Number.isInteger(ip))
-
 
 // Number.isNaN()
 // 주어진 값이 `NaN` 인지 확인함.
@@ -1020,7 +982,6 @@
 // console.log(Number.isNaN(str))
 // console.log(Number.isNaN(nul))
 
-
 // Number.parseInt() 또는 parseInt()
 // 주어진 값(숫자, 문자)을 파싱해 특정 진수(radix)의 정수로 반환함.
 
@@ -1029,7 +990,6 @@
 
 // console.log(Number.parseInt(str, 10))
 // console.log(parseInt(num, 10)) //함수로도 제공됨!
-
 
 // Number.parseFloat() 또는 parseFloat()
 // 주어진 값(숫자, 문자)을 파싱해 특정 진수(radix)의 부동소수점 실수로 반환함.
@@ -1040,7 +1000,6 @@
 // console.log(Number.parseFloat(str, 10))
 // console.log(parseFloat(num, 10)) //함수로도 제공됨!
 
-
 //수학
 
 // Math.abs()
@@ -1049,33 +1008,25 @@
 // console.log(Math.abs(2))
 // console.log(Math.abs(-2))
 
-
 //Math.ceil()
 // 주어진 숫자를 올림해 정수를 반환
 
 // console.log(Math.ceil(3.1415926535))
-
-
 
 //Math.floor()
 // 주어진 숫자를 내림해 정수를 반환함.
 
 // console.log(Math.floor(3.1415926535))
 
-
 // Math.max()
 // 주어진 숫자 중 가장 큰 숫자를 반환함.
 
 // console.log(Math.max(1, 22, 38, 1000, 192))
 
-
-
 // Math.min()
 // 주어진 숫자 중 가장 작은 숫자를 반환함.
 
 // console.log(Math.min(1, 22 ,38, 192, -10))
-
-
 
 // Math.pow()
 // 주어진 숫자의 거듭제곱한 값을 반환함.
@@ -1083,7 +1034,6 @@
 // console.log(Math.pow(4,2))
 // console.log(Math.pow(7,2))
 // console.log(Math.pow(10,3))
-
 
 // Math.random()
 // 숫자 0 이상, 1미만의 난수를 반환함.
@@ -1099,7 +1049,6 @@
 // console.log(random(11,20))
 // console.log(random(101,999))
 
-
 // Math.round()
 // 주어진 숫자를 반올림해 정수를 반환함.
 
@@ -1109,14 +1058,11 @@
 // console.log(Math.round(num1))
 // console.log(Math.round(num2))
 
-
 // 날짜
-
 
 // const date = new Date()
 // console.log(date)
 // // 타임스탬프
-
 
 // const d1 = new Date(2023, 3, 8, 9, 7, 40) //js는 월은 0부터 계산함!
 // console.log(d1)
@@ -1124,7 +1070,6 @@
 // const d2 = new Date('Sat Apr 08 2023 09:07:40 GMT+0900 (한국 표준시)')
 // console.log(d2)
 // console.log(d2.getFullYear()) //연도만 반환
-
 
 // .gerFullyear()와 .setFullYear()
 // 날짜 인스턴스와 '연도'를 반환하거나 지정한다.
@@ -1136,7 +1081,6 @@
 // date.setFullYear(2023)
 // console.log(date.getFullYear())
 // console.log(date)
-
 
 // .getMonth()와 .setMonth()
 // 날짜 인스턴스의 '월'을 반환하거나 지정한다.
@@ -1151,10 +1095,8 @@
 // console.log(date.getMonth())
 // console.log(date)
 
-
 // .getDate()와 .setDate()
 // 날짜 인스턴스의 '일'을 반환하거나 지정한다.
-
 
 // const date = new Date()
 
@@ -1165,10 +1107,8 @@
 // console.log(date.getDate())
 // console.log(date)
 
-
 // // .getHours()와 .setHours()
 // // 날짜 인스턴스의 '시간'을 반환하거나 지정한다.
-
 
 // const date = new Date()
 
@@ -1178,7 +1118,6 @@
 // date.setHours(7)
 // console.log(date.getHours())
 // console.log(date)
-
 
 // .getSeconds()와 .setSeconds()
 // 날짜 인스턴스의 '초'을 반환하거나 지정한다.
@@ -1191,7 +1130,6 @@
 // date.setSeconds(57)
 // console.log(date.getSeconds())
 // console.log(date)
-
 
 // .getDay
 // 날짜 인스턴스의 '요일'을 반환함.
@@ -1265,7 +1203,6 @@
 
 //  console.log(arr.length)
 
-
 //.at()
 // 대상 배열을 인덱싱함.
 // 음수 값을 사용하면 뒤에서부터 인덱싱한다.
@@ -1324,7 +1261,6 @@
 
 // console.log(foundItem)
 
-
 //예제
 // const users = [
 //     { name: 'Neo', age: 85},
@@ -1364,7 +1300,6 @@
 //   console.log(arr[i])
 // }
 
-
 // .includes()
 // 대상 배열이 특정 요소를 포함하고 있는지 확인함.
 
@@ -1399,7 +1334,6 @@
 // console.log(arr.join(', '))
 // console.log(arr.join('/'))
 
-
 // .map()
 // 대상 배열의 길이만큼 주어진 콜백을 실행하고, 콜백의 반환 값을 모아 새로운 배열을 반환한다.
 
@@ -1414,7 +1348,7 @@
 // const users =  [
 //   { name: 'Neo', age: 85},
 //   { name: 'Amy', age: 22},
-//   { name: 'Lewis', age: 11},  
+//   { name: 'Lewis', age: 11},
 // ]
 // const newUsers = users.map(user => {
 //   return {
@@ -1487,7 +1421,6 @@
 //  console.log(reversed)
 //  console.log(arr)
 
-
 // .shift()
 // 대상 배열에서 첫 번째 요소를 제거하고, 제거된 요소를 반환한다.
 // 대상 배열 원본이 번경됨.
@@ -1508,7 +1441,7 @@
 // console.log(arr.slice(4))
 // console.log(arr)
 
-// .some() 
+// .some()
 // 대상 배열의 어떤 요소라도 콜백 테스트를 통과하는지 확인함.
 
 // const arr = [1,2,3,4]
@@ -1571,7 +1504,6 @@
 // console.log(arr.unshift('X'))
 // console.log(arr)
 
-
 // Array.from()
 // 유사 배열(Array-like) 을 실제 배열로 반환함.
 
@@ -1601,273 +1533,21 @@
 // console.log(Array.isArray(array))
 // console.log(Array.isArray(arraylike))
 
-
 //객체
 
 // Object.assign()
 // 하나 이상의 출처(Source) 객체로부터 대상(Target) 객체로 속성을 복사하고 대상 객체롤 반환함.
 
-const target = { a: 1, b:2 }
-const source1 = { b: 3, c:4 }
-const source2 = { a: 1, b:2 }
-const result = Object.assign(target, source1, source2)
-
-console.log(target)
-console.log(result)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const target = { a: 1, b: 2 };
+const source1 = { b: 3, c: 4 };
+const source2 = { c: 5, d: 6 };
+// const result = Object.assign({}, target, source1, source2);
+const result = {
+  a: 1,
+  b: 3,
+  c: 5,
+  d: 6,
+};
+
+console.log(target);
+console.log(result);

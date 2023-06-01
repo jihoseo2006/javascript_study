@@ -648,9 +648,9 @@ function hmrAccept(bundle, id) {
 // // const a = arr[0]
 // // const b = arr[1]
 // // const c = arr[2]
-// ;[,, c] = arr 
+// ;[,, c] = arr
 // const arr = [1, 2, 3]
-// const [a,rest] = arr 
+// const [a,rest] = arr
 // console.log(a, rest)
 // console.log(b, c)
 //구조 분해 할당 - 디졸브 효과
@@ -743,7 +743,7 @@ function hmrAccept(bundle, id) {
 //   {
 //     name: 'jiho',
 //     age: 18
-//   }, 
+//   },
 //   {
 //     name: 'cheho',
 //     age: 15
@@ -792,7 +792,7 @@ function hmrAccept(bundle, id) {
 // const hello = function () {}
 // hello()
 //호이스팅
-// 함수 선언시에는 선언 전에 미리 위에 생성 처해놔라... 
+// 함수 선언시에는 선언 전에 미리 위에 생성 처해놔라...
 //선언하고 생성하면 그건 바보
 //반환 및 종료
 // function plus(num) {
@@ -820,7 +820,7 @@ function hmrAccept(bundle, id) {
 // function getName({name}) {
 //   return name
 // }
-// function getEmail({ email = '이메일이 없습니다.'}) { 
+// function getEmail({ email = '이메일이 없습니다.'}) {
 //   return email
 // }
 // console.log(getName(user))
@@ -851,7 +851,7 @@ function hmrAccept(bundle, id) {
 // function sum(a,b) {
 //   return a + b
 // }
-// const sum = (a,b) => a + b 
+// const sum = (a,b) => a + b
 // console.log(sum(1,2)) //3
 // console.log(sum(10, 20)) // 30
 //화살표 함수
@@ -867,7 +867,7 @@ function hmrAccept(bundle, id) {
 // const g = () => {return { a : 1 }}
 // const h = () => ({ a:1 })
 // const i = () => { return [1,2,3] }
-// const j = () => [1,2,3] 
+// const j = () => [1,2,3]
 //즉시실행함수(IIFE)
 // const a = 7
 // const double  = () => {
@@ -976,22 +976,22 @@ function hmrAccept(bundle, id) {
 //       return `${this.firstname} ${this.lastname}`
 //     }
 //   }
-// } 
+// }
 // const u = user()
 // console.log(u.getFullName())
 //일반함수 예제 2
 // function user() {
-//   this.firstname = 'Neo' 
+//   this.firstname = 'Neo'
 //   this.lastname = 'Anderson'
 //   return {
 //     firstname: 'jiho',
 //     lastname: 'seo',
 //     age: '18',
-//     getFullName() { 
+//     getFullName() {
 //       return `${this.firstname} ${this.lastname}`
 //     }
 //   }
-// } 
+// }
 // const lewis = {
 //   firstname: 'Lewis',
 //   lastname: 'Yang'
@@ -1036,7 +1036,7 @@ function hmrAccept(bundle, id) {
 // }
 // console.log(jiho.getFullName())
 // console.log(jiho.getFullName.call(neo))
-// function User(first, last) {  
+// function User(first, last) {
 //   this.firstname = first
 //   this.lastname = last
 // }
@@ -1077,7 +1077,7 @@ function hmrAccept(bundle, id) {
 //     this.firstname = first
 //     this.lastname = last
 //   }
-//   getfullname() { 
+//   getfullname() {
 //     return `${this.firstname} ${this.lastname}`
 //   }
 // }
@@ -1091,7 +1091,7 @@ function hmrAccept(bundle, id) {
 //     this.firstName = first
 //     this.lastName = last
 //   }
-//   get fullName() { //하나의 Gatter, 값을 값을 조회(받아내는)하는 메소드  
+//   get fullName() { //하나의 Gatter, 값을 값을 조회(받아내는)하는 메소드
 //     console.log('Gatting full name!')
 //     return `${this.firstName} ${this.lastName}`
 //   }
@@ -1213,13 +1213,13 @@ function hmrAccept(bundle, id) {
 //   constructor() {
 //     super()
 //   }
-// } 
+// }
 // const a = new A() //인스턴스 = 거푸집으로 찍어낸 칼
-// const b = new B() 
-// const c = new C() 
-// console.log(c instanceof A) 
-// console.log(c instanceof B) 
-// console.log(c instanceof C) 
+// const b = new B()
+// const c = new C()
+// console.log(c instanceof A)
+// console.log(c instanceof B)
+// console.log(c instanceof C)
 // console.log(c.constructor === A)
 // console.log(c.constructor === B)
 // console.log(c.constructor === C) // 인스턴스가 어느부분에서 만들어진건지 확인할거면 .constructor 와 클래스를 일치연산자로 비교!
@@ -1266,7 +1266,7 @@ function hmrAccept(bundle, id) {
 // console.log(str)
 // .slice()
 // 대상 문자의 일부를 추출해 새로운 문자를 반환함.
-// 두 번째 인수 직전까지 추출하고, 두 번쨰 인수를 생략하면 대상 문자의 끝까지 추출합니다. 
+// 두 번째 인수 직전까지 추출하고, 두 번쨰 인수를 생략하면 대상 문자의 끝까지 추출합니다.
 // const str = 'Hello world!'
 // console.log(str.slice(0,5))
 // console.log(str.slice(6, -1))
@@ -1573,7 +1573,7 @@ function hmrAccept(bundle, id) {
 // const users =  [
 //   { name: 'Neo', age: 85},
 //   { name: 'Amy', age: 22},
-//   { name: 'Lewis', age: 11},  
+//   { name: 'Lewis', age: 11},
 // ]
 // const newUsers = users.map(user => {
 //   return {
@@ -1641,7 +1641,7 @@ function hmrAccept(bundle, id) {
 // console.log(arr.slice(4,-1))
 // console.log(arr.slice(4))
 // console.log(arr)
-// .some() 
+// .some()
 // 대상 배열의 어떤 요소라도 콜백 테스트를 통과하는지 확인함.
 // const arr = [1,2,3,4]
 // const isValid = arr.some(item => item > 4)
@@ -1719,10 +1719,16 @@ const source1 = {
     c: 4
 };
 const source2 = {
-    a: 1,
-    b: 2
+    c: 5,
+    d: 6
 };
-const result = Object.assign(target, source1, source2);
+// const result = Object.assign({}, target, source1, source2);
+const result = {
+    a: 1,
+    b: 3,
+    c: 5,
+    d: 6
+};
 console.log(target);
 console.log(result);
 
