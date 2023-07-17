@@ -1609,18 +1609,35 @@
 //JSON.stringify() - 데이터를 JSON 문자로 반환합니다.
 //JSON.parse() - JSON 문자를 분석해 데이터로 변환합니다.
 
-console.log(JSON.stringify('Hello world!'))
-console.log(JSON.stringify(123))
-console.log(JSON.stringify(false))
-console.log(JSON.stringify(null))
-console.log(JSON.stringify({name: 'Heropy',age: 85}))
-console.log(JSON.stringify([1,2,3]))
+// console.log(JSON.stringify('Hello world!'))
+// console.log(JSON.stringify(123))
+// console.log(JSON.stringify(false))
+// console.log(JSON.stringify(null))
+// console.log(JSON.stringify({name: 'Heropy',age: 85}))
+// console.log(JSON.stringify([1,2,3]))
 
-console.log('// ------------------------------ //')
+// console.log('// ------------------------------ //')
 
-console.log(JSON.parse('"Hello world!"'))
-console.log(JSON.parse('123'))
-console.log(JSON.parse('false'))
-console.log(JSON.parse('null'))
-console.log(JSON.parse('{"name": "Heropy","age": 85}'))
-console.log(JSON.parse('[1,2,3]'))
+// console.log(JSON.parse('"Hello world!"'))
+// console.log(JSON.parse('123'))
+// console.log(JSON.parse('false'))
+// console.log(JSON.parse('null'))
+// console.log(JSON.parse('{"name": "Heropy","age": 85}'))
+// console.log(JSON.parse('[1,2,3]'))
+
+
+//임포트 방식으로 긁어오면 json 파일을 js 데이터 형식으로 받는다!
+// import abc from './test.json'
+
+// console.log(abc)
+
+// 모듈(Module)이란, 특정 데이터들의 집합(파일)이다.
+// 모듈 가져오기(Import), 내보내기(Export)
+
+import { hello } from './module.js'
+
+console.log(hello)
+
+//index.html 에 연결하여 사용하기 위해서는, module 타입을 지정해줘야 한다.
+//앞으로 진도는 모듈화 사용하여 프로젝트 진행할거임
+
