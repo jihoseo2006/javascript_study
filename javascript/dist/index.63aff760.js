@@ -1781,16 +1781,46 @@ function hmrAccept(bundle, id) {
 // console.log(abc)
 // 모듈(Module)이란, 특정 데이터들의 집합(파일)이다.
 // 모듈 가져오기(Import), 내보내기(Export)
-var _moduleJs = require("./module.js");
-console.log((0, _moduleJs.hello)) //index.html 에 연결하여 사용하기 위해서는, module 타입을 지정해줘야 한다.
- //앞으로 진도는 모듈화 사용하여 프로젝트 진행할거임
-;
+// import { hello } from './module.js'
+// console.log(hello)
+//index.html 에 연결하여 사용하기 위해서는, module 타입을 지정해줘야 한다.
+//앞으로 진도는 모듈화 사용하여 프로젝트 진행할거임
+//import 문에 사용할 변수들은 사용해야할것만 선택해서 가져올수 있다!
+// import {str as xyz, arr , hello as h} from './module.js'
+// as 문으로 이름 변경 가능
+// * <- 와일드카드 문자
+// import *  as abc from './module.js'
+// console.log(abc)
+// setTimeout(async () => {
+//   // import('./module.js').then(abc => {
+//   //   console.log(abc)
+//   // })
+//   const abc = await import('./module.js')
+//   console.log(abc)
+// },1000)
+//이런 식으로 파일마다 각자의 모듈을 가져와 사용할수 있음
+// import { a } from './a.js'
+// import { b } from './b.js'
+// console.log(a())
+// console.log(b())
+//그러나 moudle.js 처럼 한번에 각 모듈들을 모아놓고 사용할수도 있다!
+var _utilsJs = require("./utils.js");
+console.log((0, _utilsJs.a)());
+console.log((0, _utilsJs.b)());
 
-},{"./module.js":"dxpzB"}],"dxpzB":[function(require,module,exports) {
+},{"./utils.js":"bIDtH"}],"bIDtH":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "hello", ()=>hello);
-const hello = "Hello world!";
+parcelHelpers.export(exports, "a", ()=>(0, _aJs.a));
+parcelHelpers.export(exports, "b", ()=>(0, _bJs.b));
+var _aJs = require("./a.js");
+var _bJs = require("./b.js");
+
+},{"./a.js":"jyGKl","./b.js":"bfteW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jyGKl":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "a", ()=>a);
+const a = ()=>123;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -1822,6 +1852,12 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
+},{}],"bfteW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "b", ()=>b);
+const b = ()=>456;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
 
 //# sourceMappingURL=index.63aff760.js.map

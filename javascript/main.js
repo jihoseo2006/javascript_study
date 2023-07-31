@@ -1634,10 +1634,43 @@
 // 모듈(Module)이란, 특정 데이터들의 집합(파일)이다.
 // 모듈 가져오기(Import), 내보내기(Export)
 
-import { hello } from './module.js'
+// import { hello } from './module.js'
 
-console.log(hello)
+// console.log(hello)
 
 //index.html 에 연결하여 사용하기 위해서는, module 타입을 지정해줘야 한다.
 //앞으로 진도는 모듈화 사용하여 프로젝트 진행할거임
 
+//import 문에 사용할 변수들은 사용해야할것만 선택해서 가져올수 있다!
+// import {str as xyz, arr , hello as h} from './module.js'
+// as 문으로 이름 변경 가능
+
+// * <- 와일드카드 문자
+// import *  as abc from './module.js'
+
+
+// console.log(abc)
+
+// setTimeout(async () => {
+//   // import('./module.js').then(abc => {
+//   //   console.log(abc)
+//   // })
+
+//   const abc = await import('./module.js')
+//   console.log(abc)
+// },1000)
+
+//이런 식으로 파일마다 각자의 모듈을 가져와 사용할수 있음
+
+// import { a } from './a.js'
+// import { b } from './b.js'
+
+// console.log(a())
+// console.log(b())
+
+//그러나 moudle.js 처럼 한번에 각 모듈들을 모아놓고 사용할수도 있다!
+
+import { a,b } from './utils.js'
+
+console.log(a())
+console.log(b())
