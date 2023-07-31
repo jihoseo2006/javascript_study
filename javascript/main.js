@@ -1670,7 +1670,22 @@
 
 //그러나 moudle.js 처럼 한번에 각 모듈들을 모아놓고 사용할수도 있다!
 
-import { a,b } from './utils.js'
+// import { a,b } from './utils.js'
 
-console.log(a())
-console.log(b())
+// console.log(a())
+// console.log(b())
+
+//동기(Synchronous)와 비동기(Asynchronous)
+// -동기: 순차적으로 코드실행
+// -비동기: 순차적으로 코드실행 X
+
+// console.log(1)
+// setTimeout(() => { console.log(2) },1000)
+// console.log(3)
+
+// const btnEl = document.querySelector('h1')
+// btnEl.addEventListener('click', () => {
+//   console.log('Clicked!')
+// })
+
+// console.log('Hello World!')

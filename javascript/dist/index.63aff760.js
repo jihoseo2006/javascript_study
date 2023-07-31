@@ -1804,60 +1804,21 @@ function hmrAccept(bundle, id) {
 // console.log(a())
 // console.log(b())
 //그러나 moudle.js 처럼 한번에 각 모듈들을 모아놓고 사용할수도 있다!
-var _utilsJs = require("./utils.js");
-console.log((0, _utilsJs.a)());
-console.log((0, _utilsJs.b)());
+// import { a,b } from './utils.js'
+// console.log(a())
+// console.log(b())
+//동기(Synchronous)와 비동기(Asynchronous)
+// -동기: 순차적으로 코드실행
+// -비동기: 순차적으로 코드실행 X
+// console.log(1)
+// setTimeout(() => { console.log(2) },1000)
+// console.log(3)
+// const btnEl = document.querySelector('h1')
+// btnEl.addEventListener('click', () => {
+//   console.log('Clicked!')
+// })
+// console.log('Hello World!')
 
-},{"./utils.js":"bIDtH"}],"bIDtH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "a", ()=>(0, _aJs.a));
-parcelHelpers.export(exports, "b", ()=>(0, _bJs.b));
-var _aJs = require("./a.js");
-var _bJs = require("./b.js");
-
-},{"./a.js":"jyGKl","./b.js":"bfteW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jyGKl":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "a", ()=>a);
-const a = ()=>123;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"bfteW":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "b", ()=>b);
-const b = ()=>456;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
+},{}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
 
 //# sourceMappingURL=index.63aff760.js.map
