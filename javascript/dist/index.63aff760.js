@@ -1876,6 +1876,72 @@ function hmrAccept(bundle, id) {
 // })
 //순서 보장 받을라면 콜백지옥으로 선언해야한다...
 //Promise
+//기존의 콜백 코드
+// const a = callback => {
+//   setTimeout(() => {
+//     console.log(1)
+//     callback()
+//   },1000)
+// }
+// const b = () => console.log(2)
+// a(() => {
+//   b()
+// })
+//콜백 지옥 문제가 생길수 있음
+//Promise를 사용해 보자!
+const a = ()=>{
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            console.log(1);
+            resolve();
+        }, 1000);
+    });
+} // const b = () => console.log(2)
+ // a().then(() => {
+ //   b()
+ // })
+ // const b = () => {
+ //   return new Promise(resolve => {
+ //     setTimeout(() => {
+ //       console.log(2)
+ //       resolve()
+ //     },1000)
+ //   })
+ // }
+ // const c = () => {
+ //   return new Promise(resolve => {
+ //     setTimeout(() => {
+ //       console.log(3)
+ //       resolve()
+ //     },1000)
+ //   })
+ // }
+ // const d = () => console.log(4)
+ //콜백 패턴과 다를게 없다
+ //메소드 체이닝 형태를 응용하여 콜백지옥 패턴을 벗어날수 있음.
+ //예시코드
+ // a().then(() => {
+ //    return b()
+ // }).then(() => {
+ //   return c()
+ // }).then(() => {
+ //   return d()
+ // })
+ //구조를 단순화한 성능좋은 코드
+ // a()
+ //   .then(() => b())
+ //   .then(() => c())
+ //   .then(() => {
+ //     d()
+ //   })
+ //인줄 알았으나...
+ // a()
+ // .then(b)
+ // .then(c)
+ // .then(d)
+ // .then(() => console.log('done'))
+ //콜백 영화예제 코드를 promise 문법으로 다시 만들어 보자
+;
 
 },{}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
 

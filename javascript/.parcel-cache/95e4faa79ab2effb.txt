@@ -49,7 +49,7 @@
 66C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\b.js133352788782053398 0
 109C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\htmlnano\lib\modules\minifyJson.js133290685363554161 0
 130C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\lmdb\node_modules\node-addon-api\tools\eslint-format.js133290685367066261 0
-69C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\main.js133355237326558813 0
+69C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\main.js133355450383542907 0
 99C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\terser\lib\propmangle.js133290685370549912 0
 112C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\abortcontroller-polyfill\src\utils.js133290685353176512 0
 81C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\@babel133290685327210609 1
@@ -66,7 +66,7 @@
 109C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\caniuse-lite\data\features\opus.js133290685356450598 0
 98C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\escalade\dist\index.mjs133290685362947812 0
 102C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\@parcel\transformer-postcss133290685348905611 1
-66C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\dist133355237652822224 1
+66C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\dist133355450355941786 1
 84C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\type-fest133290685371137602 1
 120C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\@swc\helpers\lib\_interop_require_wildcard.js133290685351976474 0
 124C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\caniuse-lite\data\features\css-scroll-behavior.js133290685354897122 0
@@ -1969,7 +1969,7 @@
 101C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\@parcel\cache\lib\index.js133290685328630001 0
 122C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\midl.c133290685366588132 0
 101C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\caniuse-lite\data\features133290685357626785 1
-84C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\dist\index.63aff760.js133355237652788727 0
+84C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\dist\index.63aff760.js133355450355891738 0
 122C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\midl.h133290685366588132 0
 124C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mtest6.c133290685366639319 0
 129C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mtest_remap.c133290685366659249 0
@@ -4103,7 +4103,7 @@
 122C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\@parcel\core\lib\requests\ParcelBuildRequest.js133290685329256406 0
 115C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\@parcel\core\lib\requests\PathRequest.js133290685329292115 0
 121C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\@parcel\core\lib\requests\ValidationRequest.js133290685329322945 0
-77C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\dist\index.html133355237652119750 0
+77C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\dist\index.html133355445394672622 0
 107C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\@parcel\core\lib\public\Asset.js133290685329161906 0
 108C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\@parcel\core\lib\public\Bundle.js133290685329161906 0
 112C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\@parcel\core\lib\public\Dependency.js133290685329184541 0
@@ -4271,4 +4271,4 @@
 88C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\.bin\svgo.ps1133290685327082253 0
 90C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\.bin\terser.cmd133290685327092222 0
 90C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\node_modules\.bin\terser.ps1133290685327092222 0
-88C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\dist\index.63aff760.js.map133355237652808611 0
+88C:\Users\DSM2022\Documents\GitHub\javascript_study\javascript\dist\index.63aff760.js.map133355450355921745 0
