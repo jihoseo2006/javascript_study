@@ -1689,3 +1689,76 @@
 // })
 
 // console.log('Hello World!')
+
+
+// fetch('https://www.omdbapi.com/?apikey=7035c60c&s=frozen')//요청(request)
+//   .then(res => res.json())
+//   .then(res => {
+//     console.log(res)
+//     console.log(1)
+//     console.log(2)
+//     console.log(3)
+//   }) //응답(response)
+//요청과 응답을 받는 시간은 정해져 있지 않다. 동기적 코드를 강제하면 당연히 개판날거 뻔하죠?
+//그래서 비동기 라는 개념이 존재하는 거다...
+
+
+
+//콜백(Callback) 패턴
+
+// const a = (callback) => {
+//   setTimeout(() => {
+//     console.log(1)
+//     callback()
+//   }, 1000)
+// }
+// const b = (callback) => {
+//   setTimeout(() => {
+//     console.log(2)
+//     callback()
+//   }, 1000)
+// }
+
+// const c = (callback) => {
+//   setTimeout(() => {
+//     console.log(3)
+//     callback()
+//   }, 1000)
+// }
+
+// const d = () => console.log(4)
+
+
+//이런 식으로 실행순서 보장을 위해서 들여쓰기 패턴이 계속되는걸 '콜백 지옥'이라 부름.
+// a(() => {
+//   b(() => {
+//     c(() => {
+//       d()
+//     })
+//   })
+// })
+
+// const getMovies = (movieName, callback) => {
+//   fetch(`https://www.omdbapi.com/?apikey=7035c60c&s=${movieName}`)
+//     .then(res => res.json())
+//     .then(res => {
+//       console.log(res)
+//       callback()
+//     })
+// }
+
+
+
+// //요청 후 반환받아 동작하는 순서는 보장할수 없다!
+// getMovies('frozen', () => {
+//   console.log('겨울왕국!')
+//   getMovies('avengers', () => {
+//     console.log('어벤져스!')
+//     getMovies('avatar', () => {
+//       console.log('아바타!')
+//     })
+//   })
+// })
+//순서 보장 받을라면 콜백지옥으로 선언해야한다...
+
+//Promise
