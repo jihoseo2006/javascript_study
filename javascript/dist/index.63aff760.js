@@ -1964,6 +1964,54 @@ function hmrAccept(bundle, id) {
 //   .then(() => {
 //     console.log('아바타!')
 //   })
+//Async / Await
+// const a = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() =>{
+//       console.log(1)
+//       resolve()
+//     }, 1000)
+//   })
+// }
+// const b = () => console.log(2)
+// // a().then(() => b())
+// const wrap = async () => {
+//   await a()
+//   b()
+// }
+// wrap()
+//이전 영화 코드를 async/await 구조로 변환해 보자!
+// const getMovies = movieName => {
+//   return new Promise(resolve => {
+//     fetch(`https://www.omdbapi.com/?apikey=7035c60c&s=${movieName}`)
+//       .then(res => res.json())
+//       .then(res => {
+//         console.log(res)
+//         resolve()
+//       })
+//   })
+// }
+// // getMovies('frozen')
+// //   .then(() => {
+// //     console.log('겨울왕국!')
+// //     return getMovies('avengers')
+// //   })
+// //   .then(() => {
+// //     console.log('어벤져스!')
+// //     return getMovies('avatar')
+// //   })
+// //   .then(() => {
+// //     console.log('아바타!')
+// //   })
+// const wrap = async () => {
+//   await getMovies('frozen')
+//   console.log('겨울왕국!')
+//   await getMovies('avengers')
+//   console.log('어벤져스!')
+//   await getMovies('avatar')
+//   console.log('아바타!')
+// }
+// wrap()
 
 },{}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
 
