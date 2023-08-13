@@ -1938,19 +1938,64 @@
 
 //Resolve , Reject  그리고 에러 핸들링
 
-const delayAdd = index => {
-  return new Promise((resolve, reject) =>{
-    setTimeout(() => {
-      if (index > 10){
-        reject(`${index}는 10보다 클 수 없습니다.`)
-        return
-      }
-      console.log(index)
-      resolve(index + 1)
-    }, 1000)
+//예제 1
+
+// const delayAdd = index => {
+//   return new Promise((resolve, reject) =>{
+//     setTimeout(() => {
+//       if (index > 10){
+//         reject(`${index}는 10보다 클 수 없습니다.`)
+//         return
+//       }
+//       console.log(index)
+//       resolve(index + 1)
+//     }, 1000)
+//   })
+// }
+
+// delayAdd(2)
+//   .then(res => console.log(res))
+//   .catch(err => console.error(err))
+//   .finally(() => console.log('Done!'))
+
+// const wrap = async () => {
+//   try{
+//     const res = await delayAdd(2)
+//     console.log(res)
+//   } catch(err){
+//     console.error(err)
+//   } finally {
+//     console.log('Done!')
+//   }
+// }
+
+//  wrap()
+
+// 예제 2
+
+const getMovies = movieName => {
+  return new Promise((resolve, reject) => {
+    fetch(`https://www.omdbapi.com/?apikey=7035c60c&s=${movieName}`)
+      .then(res => res.json())
+      .then(json => {
+        if (json.Response === 'False') {
+          reject(json.Error)
+        }
+        resolve(json)
+      })
+      .catch(error => {
+        reject(error)
+      })
+
   })
 }
 
-delayAdd(13)
-  .then(res => console.log(res))
-  .catch(err => console.error(err))
+
+let loading = true
+
+//.then()
+getMovies('avengers')
+  .then(movies => console.log('영화 목록:', movies))
+  .catch(error => console.log('에러 발생:', error))
+  .finally(() => loading = false)
+
