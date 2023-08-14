@@ -2042,19 +2042,62 @@ function hmrAccept(bundle, id) {
 // }
 //  wrap()
 // 예제 2
+// const getMovies = movieName => {
+//   return new Promise((resolve, reject) => {
+//     fetch(`https://www.omdbapi.com/?apikey=7035c60c&s=${movieName}`)
+//       .then(res => res.json())
+//       .then(json => {
+//         console.log(json)
+//         if (json.Response === 'False') {
+//           reject(json.Error)
+//         }
+//         resolve(json)
+//       })
+//       .catch(error => {
+//         reject(error)
+//       })
+//   })
+// }
+// let loading = true
+// //.then()
+// getMovies('avengers')
+//   .then(movies => console.log('영화 목록:', movies))
+//   .catch(error => console.log('에러 발생:', error))
+//   .finally(() => loading = false)
+// //async/await
+// const wrap = async () => {
+//   try{
+//     const movies = await getMovies('avengers')
+//     console.log('영화 목록:', movies)
+//   } catch(error) {
+//     console.log('에러 발생:', error)
+//   } finally {
+//     loading = false
+//   }
+// }
+// wrap()
+//반복문에서 비동기 처리
 const getMovies = (movieName)=>{
-    return new Promise((resolve, reject)=>{
-        fetch(`https://www.omdbapi.com/?apikey=7035c60c&s=${movieName}`).then((res)=>res.json()).then((json)=>{
-            if (json.Response === "False") reject(json.Error);
-            resolve(json);
-        }).catch((error)=>{
-            reject(error);
-        });
+    return new Promise((resolve)=>{
+        fetch(`https://www.omdbapi.com/?apikey=7035c60c&s=${movieName}`).then((res)=>res.json()).then((res)=>resolve(res));
     });
 };
-let loading = true;
-//.then()
-getMovies("avengers").then((movies)=>console.log("영화 목록:", movies)).catch((error)=>console.log("에러 발생:", error)).finally(()=>loading = false);
+const titles = [
+    "frozen",
+    "avengers",
+    "avatar"
+];
+// titles.forEach(async title => {
+//   const movies = await getMovies(title)
+//   console.log(title, movies)
+// })
+const wrap = async ()=>{
+    for (const title of titles){
+        const movies = await getMovies(title);
+        console.log(title, movies);
+    }
+};
+wrap();
 
 },{}]},["3tJLW","adjPd"], "adjPd", "parcelRequirebaba")
 
