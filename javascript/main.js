@@ -2017,27 +2017,54 @@
 
 //반복문에서 비동기 처리
 
-const getMovies = movieName => {
-  return new Promise(resolve => {
-    fetch(`https://www.omdbapi.com/?apikey=7035c60c&s=${movieName}`)
-      .then(res => res.json())
-      .then(res => resolve(res))
-  })
-}
+// const getMovies = movieName => {
+//   return new Promise(resolve => {
+//     fetch(`https://www.omdbapi.com/?apikey=7035c60c&s=${movieName}`)
+//       .then(res => res.json())
+//       .then(res => resolve(res))
+//   })
+// }
 
 
-const titles = ['frozen', 'avengers', 'avatar']
+// const titles = ['frozen', 'avengers', 'avatar']
 
-// titles.forEach(async title => {
-//   const movies = await getMovies(title)
-//   console.log(title, movies)
+// // titles.forEach(async title => {
+// //   const movies = await getMovies(title)
+// //   console.log(title, movies)
+// // })
+
+// const wrap = async () =>{
+//   for (const title of titles) {
+//     const movies = await getMovies(title)
+//     console.log(title, movies)
+//   }
+// }
+
+// wrap()
+
+//fetch(주소, 옵션)
+//네트워크를 통해 리소스의 요청(Request) 및 응답(Response)을 처리할 수 있다.
+//Promise 인스턴스를 반환한다.
+
+// fetch('https://www.omdbapi.com/?apikey=7035c60c&s=avengers', {
+//   method: 'GET',
+//   headers: {
+//     'Content-Type': 'application/json' //json이라는 데이터의 포멧으로 통신을 할수 있다
+//   },
+//   body: JSON.stringify({
+//     name: 'HEROPY',
+//     age: 85,
+//     email: 'jihoseo2006@gmail.com'
+//   }) //body에 서버로 전송하고 싶은 데이터 작성, body에 명시할 데이터는 항상 문자화 시켜야함!
 // })
+//   .then(res =>  res.json())
+//   .then(json => console.log(json))
 
-const wrap = async () =>{
-  for (const title of titles) {
-    const movies = await getMovies(title)
-    console.log(title, movies)
-  }
-}
+// const wrap = async () => {
+//   const res = await fetch('https://www.omdbapi.com/?apikey=7035c60c&s=avengers')
+//   const json = await res.json()
+//   console.log(json)
+// }
+// wrap()
 
-wrap()
+
