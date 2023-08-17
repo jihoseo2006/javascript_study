@@ -2094,13 +2094,32 @@
 // console.dir(parent)
 
 
-class N {}
-class E extends N {}
+// class N {}
+// class E extends N {}
 
-console.dir(E)
-console.dir(N)
-console.dir(E.__proto__) // (상속받은)상위 클래스 접속(일반 코드 작성시 사용은 권장안함)
+// console.dir(E)
+// console.dir(N)
+// console.dir(E.__proto__) // (상속받은)상위 클래스 접속(일반 코드 작성시 사용은 권장안함)
 
-console.dir(Element)
-console.dir(Node)
-console.dir(Element.__proto__)
+// console.dir(Element)
+// console.dir(Node)
+// console.dir(Element.__proto__)
+
+
+//이벤트(Events)
+
+
+// .addEventListener()
+// 대상에 이벤트 청취(Listen)를 등록한다.
+// 대상에 저장한 이벤트가 발생했을 때 저장한 함수(Handler)가 호출된다.
+
+const parentEl = document.querySelector('.parent')
+const childEl = document.querySelector('.child')
+
+parentEl.addEventListener('click', () => {
+  console.log('Parent!')
+})
+
+childEl.addEventListener('click', () => {
+  console.log('Child!')
+})

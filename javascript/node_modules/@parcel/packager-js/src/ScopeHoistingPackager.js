@@ -18,7 +18,9 @@ import {
 import SourceMap from '@parcel/source-map';
 import nullthrows from 'nullthrows';
 import invariant from 'assert';
-import ThrowableDiagnostic from '@parcel/diagnostic';
+import ThrowableDiagnostic, {
+  convertSourceLocationToHighlight,
+} from '@parcel/diagnostic';
 import globals from 'globals';
 import path from 'path';
 
@@ -682,12 +684,7 @@ ${code}
             {
               filePath: nullthrows(dep.sourcePath),
               codeHighlights: dep.loc
-                ? [
-                    {
-                      start: dep.loc.start,
-                      end: dep.loc.end,
-                    },
-                  ]
+                ? [convertSourceLocationToHighlight(dep.loc)]
                 : [],
             },
           ],
@@ -1096,9 +1093,11 @@ ${code}
           .map(exp => {
             let resolved = this.getSymbolResolution(asset, asset, exp);
             let get = this.buildFunctionExpression([], resolved);
-            let set = asset.meta.hasCJSExports
-              ? ', ' + this.buildFunctionExpression(['v'], `${resolved} = v`)
-              : '';
+            let isEsmExport = !!asset.symbols.get(exp)?.meta?.isEsm;
+            let set =
+              !isEsmExport && asset.meta.hasCJSExports
+                ? ', ' + this.buildFunctionExpression(['v'], `${resolved} = v`)
+                : '';
             return `$parcel$export($${assetId}$exports, ${JSON.stringify(
               exp,
             )}, ${get}${set});`;
