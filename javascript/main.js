@@ -2113,13 +2113,27 @@
 // 대상에 이벤트 청취(Listen)를 등록한다.
 // 대상에 저장한 이벤트가 발생했을 때 저장한 함수(Handler)가 호출된다.
 
-const parentEl = document.querySelector('.parent')
-const childEl = document.querySelector('.child')
+// const parentEl = document.querySelector('.parent')
+// const childEl = document.querySelector('.child')
 
-parentEl.addEventListener('click', () => {
-  console.log('Parent!')
-})
+// parentEl.addEventListener('click', () => {
+//   console.log('Parent!')
+// })
 
-childEl.addEventListener('click', () => {
-  console.log('Child!')
-})
+// childEl.addEventListener('click', () => {
+//   console.log('Child!')
+// })
+
+// .removeEventListener() 
+
+//대상에 등록했던 이벤트 청취(Listen)를 제거함.
+// 메모리 관리를 위해 등록한 이벤트를 제거하는 과정이 필요할수 있다.
+
+// const handler = () => {
+//   console.log('Parent!')
+// }
+
+// parentEl.addEventListener('click', handler)
+// childEl.addEventListener('click', () => {
+//   parentEl.removeEventListener('click', handler)
+// })
