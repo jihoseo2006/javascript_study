@@ -2182,16 +2182,30 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 // })
 //이벤트 객체
 //이벤트 객체는 대상에서 발생한 이벤트 정보를 담고 있다.
+// const parentEl = document.querySelector('.parent')
+// parentEl.addEventListener('click', event => {
+//   console.log(event.target, event.currentTarget)
+// })
+// parentEl.addEventListener('wheel', event => {
+//   console.log(event)
+// })
+// const inputEl = document.querySelector('input')
+// inputEl.addEventListener('keydown', event => {
+//   console.log(event.key)
+// })
+//기본 동작 방지
+//마우스 휠의 스크롤 동작 방지!
 const parentEl = document.querySelector(".parent");
-parentEl.addEventListener("click", (event)=>{
-    console.log(event.target, event.currentTarget);
-});
 parentEl.addEventListener("wheel", (event)=>{
-    console.log(event);
+    //기본 동작을 방지해서 사용하지 않겠다.
+    event.preventDefault();
+    console.log("wheel!");
 });
-const inputEl = document.querySelector("input");
-inputEl.addEventListener("keydown", (event)=>{
-    console.log(event.key);
+// <a> 태그에서 페이지 이동 방지!
+const anchorEl = document.querySelector("a");
+anchorEl.addEventListener("click", (event)=>{
+    event.preventDefault();
+    console.log("Click!");
 });
 
 },{}]},["lmKb7","adjPd"], "adjPd", "parcelRequirebaba")
