@@ -2295,6 +2295,24 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 // childEl.removeEventListener('mouseup', () => {
 //   childEl.classList.toggle('active')
 // })
+// 키보드 이벤트
+// keydown | 키를 누를 때
+// keyup | 키를 땔 때
+const inputEl = document.querySelector("input");
+// CJK 문자는  저거 하면 두번 출력된다
+// inputEl.addEventListener('keydown', event => {
+//   if (event.key === 'Enter') {
+//     console.log(event.isComposing)
+//     console.log(event.target.value)
+//   }
+// })
+// 그니까 CJK 문자 쓸라면 isComposing을 알잘딱으로 쓰자!
+inputEl.addEventListener("keydown", (event)=>{
+    if (event.key === "Enter" && !event.isComposing) {
+        console.log(event.isComposing);
+        console.log(event.target.value);
+    }
+});
 
 },{}]},["lmKb7","adjPd"], "adjPd", "parcelRequirebaba")
 
