@@ -2160,17 +2160,53 @@
 //기본 동작 방지
 
 //마우스 휠의 스크롤 동작 방지!
+// const parentEl = document.querySelector('.parent')
+// parentEl.addEventListener('wheel', event => {
+//   //기본 동작을 방지해서 사용하지 않겠다.
+//   event.preventDefault()
+//   console.log('wheel!')
+// })
+
+// // <a> 태그에서 페이지 이동 방지!
+// const anchorEl = document.querySelector('a')
+// anchorEl.addEventListener('click', event => {
+//   event.preventDefault()
+//   console.log('Click!')
+// })
+
+//이벤트 전파(버블) 정지
+
+// const parentEl = document.querySelector('.parent')
+// const childEl = document.querySelector('.child')
+// const anchorEl = document.querySelector('a')
+
+// window.addEventListener('click', event => {
+//   console.log('Window!')
+// }, { capture : true })
+// document.body.addEventListener('click', event => {
+//   console.log('Body!')
+//   event.stopPropagation()//버블링 정지!
+// }, { capture : true })
+// parentEl.addEventListener('click', event => {
+//   console.log('Parent!')
+// }, { capture : true })
+// childEl.addEventListener('click', event => {
+//   console.log('Child!')
+// })
+// anchorEl.addEventListener('click', event => {
+//   console.log('Anchor!')
+// })
+
+//예제 2
 const parentEl = document.querySelector('.parent')
-parentEl.addEventListener('wheel', event => {
-  //기본 동작을 방지해서 사용하지 않겠다.
-  event.preventDefault()
-  console.log('wheel!')
-})
 
-// <a> 태그에서 페이지 이동 방지!
-const anchorEl = document.querySelector('a')
-anchorEl.addEventListener('click', event => {
-  event.preventDefault()
-  console.log('Click!')
-})
+const handler = () => {
+  console.log('Parent!')
+}
 
+parentEl.addEventListener('click', handler, {
+   capture : true 
+  })
+parentEl.removeEventListener('click',handler,{
+  capture : true
+})
