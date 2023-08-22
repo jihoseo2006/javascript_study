@@ -2257,8 +2257,8 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 // 이벤트 위임
 // 비슷한 패턴의 여러 요소에서 이벤트를 핸들링해야 하는 경우,
 // 단일 조상 요소에서 제어하는 이벤트 위임 패턴을 사용할수 있다.
-const parentEl = document.querySelector(".parent");
-const childEls = document.querySelectorAll(".child");
+// const parentEl = document.querySelector('.parent')
+// const childEls = document.querySelectorAll('.child')
 //모든 대상 요소에 이벤트 등록!
 // childEls.forEach(el => {
 //   el.addEventListener('click', event => {
@@ -2266,10 +2266,35 @@ const childEls = document.querySelectorAll(".child");
 //   })
 // })
 // 조상 요소에 이벤트 위임!
-parentEl.addEventListener("click", (event)=>{
-    const childEl = event.target.closest(".child");
-    if (childEl) console.log(childEl.textContent);
-});
+// parentEl.addEventListener('click', event => {
+//   const childEl = event.target.closest('.child')
+//   if (childEl) {
+//     console.log(childEl.textContent)
+//   }
+// })
+// Mouse & Pointer Events
+// click | 클릭했을 때
+// dbclick | 더블 클릭 했을 때
+// mousedown | 버튼을 누를 때
+// mouseup | 버튼을 땔 때
+// mouseenter | 포인터가 요소 위로 들어갈 때
+// mouseleave | 마우스를 요소 밖으로 나올 때
+// mousemove | 포인터가 움직일 때
+// contextmenu | 우클릭했을때
+// wheel | 휠 버튼이 회전할 때
+// const parentEl = document.querySelector('.parent')
+// const childEl = document.querySelector('.child')
+//요소를 클릭했을 때 active 클래스를 추가하여 색이 바뀌도록 한다.
+// childEl.addEventListener('click', () => {
+//   childEl.classList.toggle('active')
+// })
+// //마우스를 누르고 떌때 active 가 부여되고 제거된다.
+// childEl.addEventListener('mousedown', () => {
+//   childEl.classList.toggle('active')
+// })
+// childEl.removeEventListener('mouseup', () => {
+//   childEl.classList.toggle('active')
+// })
 
 },{}]},["lmKb7","adjPd"], "adjPd", "parcelRequirebaba")
 
