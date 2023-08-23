@@ -2298,7 +2298,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 // 키보드 이벤트
 // keydown | 키를 누를 때
 // keyup | 키를 땔 때
-const inputEl = document.querySelector("input");
+// const inputEl = document.querySelector('input')
 // CJK 문자는  저거 하면 두번 출력된다
 // inputEl.addEventListener('keydown', event => {
 //   if (event.key === 'Enter') {
@@ -2306,12 +2306,50 @@ const inputEl = document.querySelector("input");
 //     console.log(event.target.value)
 //   }
 // })
-// 그니까 CJK 문자 쓸라면 isComposing을 알잘딱으로 쓰자!
-inputEl.addEventListener("keydown", (event)=>{
-    if (event.key === "Enter" && !event.isComposing) {
-        console.log(event.isComposing);
-        console.log(event.target.value);
-    }
+// // 그니까 CJK 문자 쓸라면 isComposing을 알잘딱으로 쓰자!
+// inputEl.addEventListener('keydown', event => {
+//   if (event.key === 'Enter' && !event.isComposing) {
+//     console.log(event.isComposing)
+//     console.log(event.target.value)
+//   }
+// })
+// Focus & Form Events
+// Focus | 요소가 포커스를 얻었을 때
+// blur | 요소가 포커스를 잃었을 때
+// input | 값이 입력되었을 때
+// change | 상태가 번경되었을때
+// submit | 제출 버튼을 선택했을 때
+// reset | 리셋 버튼을 선택했을 때
+const formEl = document.querySelector("form");
+const inputEl = document.querySelectorAll("input");
+// inputEl.forEach(el => {
+//   el.addEventListener('focus', () => {
+//     formEl.classList.add('active')
+//   })
+//   el.addEventListener('blur', () => {
+//     formEl.classList.remove('active')
+//   })
+//   el.addEventListener('input', event => {
+//     console.log(event.target.value)
+//   })
+// })
+// formEl.addEventListener('submit', event => {
+//   event.preventDefault()
+//   const data = {
+//     id: event.target[0].value,
+//     pw: event.target[1].value
+//   }
+// })
+formEl.addEventListener("submit", (event)=>{
+    event.preventDefault();
+    const data = {
+        id: event.target[0].value,
+        pw: event.target[1].value
+    };
+    console.log("제출!", data);
+});
+formEl.addEventListener("reset", (event)=>{
+    console.log("리셋!");
 });
 
 },{}]},["lmKb7","adjPd"], "adjPd", "parcelRequirebaba")
