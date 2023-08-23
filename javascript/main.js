@@ -2379,20 +2379,37 @@
 
 //커스텀 이벤트 예제 2
 
-const child1 = document.querySelector('.child:nth-child(1)')
-const child2 = document.querySelector('.child:nth-child(2)')
+// const child1 = document.querySelector('.child:nth-child(1)')
+// const child2 = document.querySelector('.child:nth-child(2)')
 
 
-child1.addEventListener('hello-world', event => {
-  console.log('커스텀 이벤트 발생!')
-  console.log(event.detail)
-})
+// child1.addEventListener('hello-world', event => {
+//   console.log('커스텀 이벤트 발생!')
+//   console.log(event.detail)
+// })
 
-child2.addEventListener('click', () => {
-  // event VS CustomEvent
-  // 커스텀 이벤트를 실행시킬 때에는 이벤트만 사용해도 상관없지만,
-  // detail 사용, 즉 커스텀 이벤트로 값을 전송해야 할때는 CustomEvent를 사용하자!
-  child1.dispatchEvent(new CustomEvent('hello-world', {
-    detail: 123
-  }))
-})
+// child2.addEventListener('click', () => {
+//   // event VS CustomEvent
+//   // 커스텀 이벤트를 실행시킬 때에는 이벤트만 사용해도 상관없지만,
+//   // detail 사용, 즉 커스텀 이벤트로 값을 전송해야 할때는 CustomEvent를 사용하자!
+//   child1.dispatchEvent(new CustomEvent('hello-world', {
+//     detail: 123
+//   }))
+// })
+
+// chapter 11 기타 Web APIs
+
+// console
+// .log(), .warn(), .error(), .dir()
+
+// 콘솔에 메시지나 객체를 출력한다.
+
+// -log: 일반 메시지
+// -warn: 경고 메시지
+// -error: 에러 메시지
+// -dir: 속성을 볼 수 있는 객체를 출력
+
+console.log(document.body)
+console.warn(document.body)
+console.error(document.body)
+console.dir(document.body)
