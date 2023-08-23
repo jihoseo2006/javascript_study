@@ -2320,8 +2320,8 @@
 // submit | 제출 버튼을 선택했을 때
 // reset | 리셋 버튼을 선택했을 때
 
-const formEl = document.querySelector('form')
-const inputEl = document.querySelectorAll('input')
+// const formEl = document.querySelector('form')
+// const inputEl = document.querySelectorAll('input')
 
 // inputEl.forEach(el => {
 //   el.addEventListener('focus', () => {
@@ -2343,15 +2343,56 @@ const inputEl = document.querySelectorAll('input')
 //   }
 // })
 
-formEl.addEventListener('submit', event => {
-  event.preventDefault()
-  const data = {
-    id: event.target[0].value,
-    pw: event.target[1].value
-  }
-  console.log('제출!', data)
+// formEl.addEventListener('submit', event => {
+//   event.preventDefault()
+//   const data = {
+//     id: event.target[0].value,
+//     pw: event.target[1].value
+//   }
+//   console.log('제출!', data)
+// })
+
+// formEl.addEventListener('reset', event => {
+//   console.log('리셋!')
+// })
+
+// 커스텀 이벤트와 디스패치
+
+// const child1 = document.querySelector('.child:nth-child(1)')
+// const child2 = document.querySelector('.child:nth-child(2)')
+
+// child1.addEventListener('click', event => {
+//   //강제로 이벤트 발생!
+//   child2.dispatchEvent(new Event('click'))
+//   child2.dispatchEvent(new Event('wheel'))
+//   child2.dispatchEvent(new Event('keydown'))
+// })
+// child2.addEventListener('click', event => {
+//   console.log('Child2 click!')
+// })
+// child2.addEventListener('wheel', event => {
+//   console.log('Child2 Wheel!')
+// })
+// child2.addEventListener('keydown', event => {
+//   console.log('Child2 Keydown!')
+// })
+
+//커스텀 이벤트 예제 2
+
+const child1 = document.querySelector('.child:nth-child(1)')
+const child2 = document.querySelector('.child:nth-child(2)')
+
+
+child1.addEventListener('hello-world', event => {
+  console.log('커스텀 이벤트 발생!')
+  console.log(event.detail)
 })
 
-formEl.addEventListener('reset', event => {
-  console.log('리셋!')
+child2.addEventListener('click', () => {
+  // event VS CustomEvent
+  // 커스텀 이벤트를 실행시킬 때에는 이벤트만 사용해도 상관없지만,
+  // detail 사용, 즉 커스텀 이벤트로 값을 전송해야 할때는 CustomEvent를 사용하자!
+  child1.dispatchEvent(new CustomEvent('hello-world', {
+    detail: 123
+  }))
 })
