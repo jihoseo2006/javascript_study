@@ -2476,10 +2476,18 @@
 // %o - 객체로 적용
 // %c - css를 적용
 
-const a = 'The brown fox'
-const b = 3
-const c = {
-  f : 'fox',
-  d : 'dog'
-}
-console.log()
+// const a = 'The brown fox'
+// const b = 3
+// const c = {
+//   f : 'fox',
+//   d : 'dog'
+// }
+// console.log('%s jumps over the lazy dog %s times.', a, b)
+// console.log('%o is Object!', c)
+// console.log(
+//   '%cThe brown fox %cjumped over %cthe lazy dog.',
+//   'color: brown; font-family: serif; font-size: 20px;',
+//   '',
+//   'font-size: 18px; color: #FFF; background-color: green; border-radius: 4px;'
+// )
+
