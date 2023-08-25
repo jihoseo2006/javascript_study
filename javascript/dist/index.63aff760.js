@@ -2455,6 +2455,17 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 //   '',
 //   'font-size: 18px; color: #FFF; background-color: green; border-radius: 4px;'
 // )
+// Cookie(쿠키)
+// 도메인 단위로 저장
+// 표준안 기준, 사이트당 최대 20개 및 4KB로 제한
+// 영구 저장 불가능
+// domain: 유효 도메인 설정
+// path: 유효 경로 설정
+// expires: 만료 날짜(UTC Date) 설정
+// max-age: 만료 타이머(s) 설정
+document.cookie = "a=1; domain=localhost path=/abc";
+document.cookie = "b=2";
+console.log(document.cookie);
 
 },{}]},["lmKb7","adjPd"], "adjPd", "parcelRequirebaba")
 
