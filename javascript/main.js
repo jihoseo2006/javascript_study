@@ -2502,8 +2502,17 @@
 // expires: 만료 날짜(UTC Date) 설정
 // max-age: 만료 타이머(s) 설정
 
-document.cookie = 'a=1; domain=localhost path=/abc'
-document.cookie = 'b=2'
+// document.cookie = `a=1;`
+// document.cookie = `b=2; expires=${new Date(2023, 9, 26).toUTCString()}`
+// document.cookie = 'a=3'
+
+// console.log(document.cookie)
+
+// function getCookie(name) {
+//   const cookie = document.cookie.split('; ')
+//   return cookie
+// }
+// console.log(getCookie('a'))
 
 
-console.log(document.cookie)
+ 

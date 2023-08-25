@@ -2463,9 +2463,15 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 // path: 유효 경로 설정
 // expires: 만료 날짜(UTC Date) 설정
 // max-age: 만료 타이머(s) 설정
-document.cookie = "a=1; domain=localhost path=/abc";
-document.cookie = "b=2";
-console.log(document.cookie);
+// document.cookie = `a=1;`
+// document.cookie = `b=2; expires=${new Date(2023, 9, 26).toUTCString()}`
+// document.cookie = 'a=3'
+// console.log(document.cookie)
+// function getCookie(name) {
+//   const cookie = document.cookie.split('; ')
+//   return cookie
+// }
+// console.log(getCookie('a'))
 
 },{}]},["lmKb7","adjPd"], "adjPd", "parcelRequirebaba")
 
