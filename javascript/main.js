@@ -2523,11 +2523,19 @@
 // .hostname: 도메인 이름
 // .pathname: 도메인 이후 경로
 // .host: 포트 번호를 포함한 도메인 이름
-// .port: 포트 번호
+// .port: 포   트 번호
 // .hash: 해시 정보 (페이지의 ID)
 
 // .assign(주소): 해당 '주소'로 페이지 이동
 // .replace(주소): 해당 '주소'로 페이지 이동, 현재 페이지 히스토리를 제거
 // .reload(강력): 페이지 새로고침, `true` 인수는 '강력' 새로고침
 
-console.log(location)
+// console.log(location)
+
+
+// History
+
+// 브라우저 히스토리(세션 기록) 정보를 반환하거나 제어한다.
+
+// .length: 등록된 히스토리 개수
+// .scrollRestoration: 
