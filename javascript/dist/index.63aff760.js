@@ -2489,6 +2489,61 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 // 브라우저 히스토리(세션 기록) 정보를 반환하거나 제어한다.
 // .length: 등록된 히스토리 개수
 // .scrollRestoration: 
+// .state: 현재 히스토리에 등록되 데이터(상태)
+// .back(): 뒤로가기
+// .forward(): 앞으로 가기 
+// .go(위치): 현제 페이지 기준 특정 히스토리 '위치'로 이동
+// .pushState(상태, 제목, 주소): 히스토리에 상태 및 주소를 추가
+// .replaceState(상태, 제목, 주소): 현제 히스토리의 상태 및 주소를 교체
+// > 모든 브라우저(Safari 는 제외)는  '제목' 옵션을 무시한다.
+// console.log(history)
+// SPA(Single Page Application) 
+// SPA 예제!
+// const page1  = /*html*/ `
+//   <section class="page1">
+//     <h1>Page 1</h1>
+//   </section>
+// `
+// const page2 = /*html*/ `
+//   <section class="page2">
+//     <h1>Page 2</h1>
+//   </section>
+// `
+// const page3  = /*html*/ `
+//   <section class="page3">
+//     <h1>Page 3</h1>
+//   </section>
+// `
+// const pageNotFound = /*html*/ `
+//   <section class="page2">
+//     <h1>404 Page Not Found!</h1>
+//   </section>
+// `
+// const pages = [
+//   { path: '#/page1', template: page1},
+//   { path: '#/page2', template: page2},
+//   { path: '#/page3', template: page3}
+// ]
+// const appEl = document.querySelector('#app')
+// const render = () => {
+//   console.log(history)
+//   const page = pages.find(page => page.path === location.hash)
+//   appEl.innerHTML = page
+//     ? page.template
+//     : pageNotFound
+// }
+// window.addEventListener('popstate', render)
+// render()
+// const pagePush = num => {
+//   history.pushState(`전달할 데이터 - ${num}`,null, `#/page${num}`)
+//   render()
+// }
+// const inputEl = document.querySelector('nav input')
+//   inputEl.addEventListener('keydown',event => {
+//     if(event.key === 'Enter') {
+//       pagePush(event.target.value)
+//     }
+// })
 
 },{}]},["lmKb7","adjPd"], "adjPd", "parcelRequirebaba")
 

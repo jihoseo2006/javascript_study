@@ -6,12 +6,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script type ="module" defer src="./main.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+    nav {
+      background-color: white;
+      padding: 10px;
+      border: 4px solid;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+    }
+    nav input {
+      width: 50px;
+    }
+    section {
+      height: 100vh;
+      border: 10px solid;
+      box-sizing: border-box;
+    }
+    section.page1 { color: red;}
+    section.page2 { color: orange;}
+    section.page3 { color: green;}
+
+  </style>
   
 </head>
 <body>
-  <h1>Hello World!</h1>
-  <a href="#hello">hello</a> 
-  <h2 id="#hello">Hello World!</h2>
+  <nav>
+    <a href="#/page1">p1</a> /
+    <a href="#/page2">p2</a> /
+    <a href="#/page3">p3</a> /
+    <input type="text" />
+  </nav>
+  <div id="app">
+    <section id="/page1" class="page1">
+      <h1>Page 1</h1>
+    </section>
+    <section id="/page2" class="page2">
+      <h1>Page 2</h1>
+    </section>
+    <section id="/page3" class="page3">
+      <h1>Page 3</h1>
+    </section>
+  </div>
+  
 
 </body>
 </html>
