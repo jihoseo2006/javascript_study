@@ -2544,7 +2544,83 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 //       pagePush(event.target.value)
 //     }
 // })
+// 심볼(Symbol)
+// 번경이 불가한 데이터로, 유일한 식별자를 만들어 데이터를 보관하는 용도로 사용할 수 있다.
+// Symbol('설명')
+// '설명' 은 단순 디버깅을 위한 용도일 뿐, 심볼 관계가 없다.
+// const sKey = Symbol('Hello!')
+// const user = {
+//   key: '일반 정보!',
+//   [sKey]: '민감한 정보!'
+// }
+// console.log(user.key)
+// console.log(user['key'])
+// console.log(user[sKey])
+// console.log(user[Symbol('Hello!')])
+// console.log(typeof sKey)
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _jihoJs = require("./jiho.js");
+var _jihoJsDefault = parcelHelpers.interopDefault(_jihoJs);
+var _keysJs = require("./keys.js");
+console.log((0, _jihoJsDefault.default));
+console.log(Object.keys((0, _jihoJsDefault.default)));
+for(const key in 0, _jihoJsDefault.default)console.log((0, _jihoJsDefault.default)[key]);
+console.log((0, _jihoJsDefault.default)[0, _keysJs.birthKey]);
+console.log((0, _jihoJsDefault.default)[0, _keysJs.emailsKey]);
 
-},{}]},["lmKb7","adjPd"], "adjPd", "parcelRequirebaba")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./jiho.js":"fWgrP","./keys.js":"AakGV"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"fWgrP":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _keysJs = require("./keys.js");
+exports.default = {
+    firstName: "JiHo",
+    lastName: "Seo",
+    age: 17,
+    [(0, _keysJs.birthKey)]: new Date(2006, 2, 22, 16, 30),
+    [(0, _keysJs.emailsKey)]: [
+        "thesecond@gmail.com",
+        "abc@naver.com"
+    ]
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./keys.js":"AakGV"}],"AakGV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "birthKey", ()=>birthKey);
+parcelHelpers.export(exports, "emailsKey", ()=>emailsKey);
+const birthKey = Symbol("Date or birth!");
+const emailsKey = Symbol("Emails!");
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["lmKb7","adjPd"], "adjPd", "parcelRequirebaba")
 
 //# sourceMappingURL=index.63aff760.js.map
