@@ -2558,69 +2558,32 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 // console.log(user[sKey])
 // console.log(user[Symbol('Hello!')])
 // console.log(typeof sKey)
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _jihoJs = require("./jiho.js");
-var _jihoJsDefault = parcelHelpers.interopDefault(_jihoJs);
-var _keysJs = require("./keys.js");
-console.log((0, _jihoJsDefault.default));
-console.log(Object.keys((0, _jihoJsDefault.default)));
-for(const key in 0, _jihoJsDefault.default)console.log((0, _jihoJsDefault.default)[key]);
-console.log((0, _jihoJsDefault.default)[0, _keysJs.birthKey]);
-console.log((0, _jihoJsDefault.default)[0, _keysJs.emailsKey]);
+// import jiho from './jiho.js'
+// import { birthKey, emailsKey } from './keys.js'
+// console.log(jiho)
+// console.log(Object.keys(jiho))
+// for (const key in jiho) {
+//   console.log(jiho[key])
+// }
+// console.log(jiho[birthKey])
+// console.log(jiho[emailsKey])
+//BigInt
+// BigInt는 길이 제한이 없는 정수(integer)이다.
+// 숫자(number) 데이터가 안정적으로 표시할수 있는
+// 최대치(`2^53 - 1`) 보다 큰 정수를 표현할 수 있다.
+// 정수 뒤에 `n`을 붙이거나 `BigInt()`를 호출해 생성한다.
+console.log(1234567890123456789012345678901234567890);
+console.log(1234567890123456789012345678901234567890n);
+console.log(BigInt("1234567890123456789012345678901234567890"));
+const a = 11n;
+const b = 22;
+// 숫자 => BigInt
+console.log(a + BigInt(b));
+console.log(typeof (a + BigInt(b)));
+// BigInt => 숫자
+console.log(Number(a) + b);
+console.log(typeof (Number(a) + b));
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./jiho.js":"fWgrP","./keys.js":"AakGV"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"fWgrP":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _keysJs = require("./keys.js");
-exports.default = {
-    firstName: "JiHo",
-    lastName: "Seo",
-    age: 17,
-    [(0, _keysJs.birthKey)]: new Date(2006, 2, 22, 16, 30),
-    [(0, _keysJs.emailsKey)]: [
-        "thesecond@gmail.com",
-        "abc@naver.com"
-    ]
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./keys.js":"AakGV"}],"AakGV":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "birthKey", ()=>birthKey);
-parcelHelpers.export(exports, "emailsKey", ()=>emailsKey);
-const birthKey = Symbol("Date or birth!");
-const emailsKey = Symbol("Emails!");
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["lmKb7","adjPd"], "adjPd", "parcelRequirebaba")
+},{}]},["lmKb7","adjPd"], "adjPd", "parcelRequirebaba")
 
 //# sourceMappingURL=index.63aff760.js.map

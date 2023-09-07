@@ -2630,15 +2630,38 @@
 // console.log(user[Symbol('Hello!')])
 // console.log(typeof sKey)
 
-import jiho from './jiho.js'
-import { birthKey, emailsKey } from './keys.js'
+// import jiho from './jiho.js'
+// import { birthKey, emailsKey } from './keys.js'
 
-console.log(jiho)
-console.log(Object.keys(jiho))
+// console.log(jiho)
+// console.log(Object.keys(jiho))
 
-for (const key in jiho) {
-  console.log(jiho[key])
-}
+// for (const key in jiho) {
+//   console.log(jiho[key])
+// }
 
-console.log(jiho[birthKey])
-console.log(jiho[emailsKey])
+// console.log(jiho[birthKey])
+// console.log(jiho[emailsKey])
+
+//BigInt
+
+// BigInt는 길이 제한이 없는 정수(integer)이다.
+// 숫자(number) 데이터가 안정적으로 표시할수 있는
+// 최대치(`2^53 - 1`) 보다 큰 정수를 표현할 수 있다.
+// 정수 뒤에 `n`을 붙이거나 `BigInt()`를 호출해 생성한다.
+
+console.log(1234567890123456789012345678901234567890)
+
+console.log(1234567890123456789012345678901234567890n)
+console.log(BigInt('1234567890123456789012345678901234567890'))
+
+const a = 11n
+const b = 22
+
+// 숫자 => BigInt
+console.log(a + BigInt(b))
+console.log(typeof (a + BigInt(b)))
+
+// BigInt => 숫자
+console.log(Number(a) + b)
+console.log(typeof (Number(a) + b))
