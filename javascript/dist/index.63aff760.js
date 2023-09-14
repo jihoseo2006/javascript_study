@@ -2572,17 +2572,37 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 // 숫자(number) 데이터가 안정적으로 표시할수 있는
 // 최대치(`2^53 - 1`) 보다 큰 정수를 표현할 수 있다.
 // 정수 뒤에 `n`을 붙이거나 `BigInt()`를 호출해 생성한다.
-console.log(1234567890123456789012345678901234567890);
-console.log(1234567890123456789012345678901234567890n);
-console.log(BigInt("1234567890123456789012345678901234567890"));
-const a = 11n;
-const b = 22;
-// 숫자 => BigInt
-console.log(a + BigInt(b));
-console.log(typeof (a + BigInt(b)));
-// BigInt => 숫자
-console.log(Number(a) + b);
-console.log(typeof (Number(a) + b));
+// console.log(1234567890123456789012345678901234567890)
+// console.log(1234567890123456789012345678901234567890n)
+// console.log(BigInt('1234567890123456789012345678901234567890'))
+// const a = 11n
+// const b = 22
+// // 숫자 => BigInt
+// console.log(a + BigInt(b))
+// console.log(typeof (a + BigInt(b)))
+// // BigInt => 숫자
+// console.log(Number(a) + b)
+// console.log(typeof (Number(a) + b))
+// 불변성 & 가변성
+// 불변성(Immutability)은 생성된 데이터가 메모리에서 번경되지 않고,
+// 가변성(Mutability)은 생성된 데이터가 메모리에서 번경될 수 있음을 의미한다.
+// 자바스크립트 원시형은 불변성을, 참조형은 가변성을 가지고 있다.
+// let a = { x: 1 }
+// let b = { x: 1 }
+// b.x = 2
+// console.log(b)
+// console.log(a)
+//얕은 복사 & 깊은 복사
+// 참조형은 가변성으로 인해, 데이터를 복사할 때 주의가 필요하다.
+// 얕은복사(Shallow Copy) - 참조형의 1차원 데이터만 복사
+// 깊은복사(Deep Copy) - 참조형의 모든 차원 데이터를 복사
+let a = 1;
+let b = a;
+console.log(b);
+console.log(a);
+b = 3;
+console.log(b);
+console.log(a);
 
 },{}]},["lmKb7","adjPd"], "adjPd", "parcelRequirebaba")
 
