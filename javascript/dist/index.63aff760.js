@@ -2596,13 +2596,20 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 // 참조형은 가변성으로 인해, 데이터를 복사할 때 주의가 필요하다.
 // 얕은복사(Shallow Copy) - 참조형의 1차원 데이터만 복사
 // 깊은복사(Deep Copy) - 참조형의 모든 차원 데이터를 복사
-let a = 1;
-let b = a;
-console.log(b);
-console.log(a);
-b = 3;
-console.log(b);
-console.log(a);
+//가비지 컬랙션(GC, Garbage Collection, 쓰레기 수집)
+// 자바스크립트의 메모리 관리 방법으로 자바스크립트 연산이 자동으로,
+// 데이터가 할당된 메모리에서 더 이상 사용되지 않는 데이터를 해체하는 것을 말한다
+// 가비지 컬랙션은 개발자가 직접 실행하거나 관리할 수 없다.
+const user = {
+    name: "jiho",
+    age: "18",
+    emails: [
+        "jihoseo2006@gmail.com",
+        "jihoseo2006@dsm.hs.kr"
+    ]
+};
+delete user.emails;
+console.log(user);
 
 },{}]},["lmKb7","adjPd"], "adjPd", "parcelRequirebaba")
 
