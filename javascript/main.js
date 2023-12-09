@@ -2710,16 +2710,86 @@
 // 함수가 선언 될 때의 유효범위 (렉시컬 범위)를 기억하고 있다가,
 // 함수가 외부에서 호출 될 때 그 유효범위의 특정 변수를 참조할 수 있는 개념을 말한다.
 
-function createCount() {
-  let a = 0
-  return function() {
-    return a += 1
+// function createCount() {
+//   let a = 0
+//   return function() {
+//     return a += 1
+//   }
+// }
+
+// const count1 = createCount()
+
+// console.log(count1()) //1
+// console.log(count1()) //2
+// console.log(count1()) //3
+ 
+// const count2 = createCount()
+
+// console.log(count2()) 
+// console.log(count2()) 
+// console.log(count2()) 
+
+// 메모리 누수
+
+// 더 이상 필요하지 않은 데이터가 해제되지 못하고 메모리를 계속 차지되는 현상.
+
+// - 불필요한 전역변수 사용
+// window.hello = 'Hello World!'
+// window.heropy = {name: 'Heropy', age: 85}
+
+// - 분리된 노드 참조
+
+// const btn = document.querySelector('button')
+// const parent = document.querySelector('.parent')
+
+// btn.addEventListener('click', () => {
+  //   console.log(parent)
+  //   parent.remove()
+  // })
+  
+// const btn = document.querySelector('button')
+
+// btn.addEventListener('click', () => {
+  //   const parent = document.querySelector('.parent')
+  //   console.log(parent)
+  //   parent && parent.remove()
+  // })
+  
+// - 해제되지 않은 타이머
+// let a = 0
+
+// setInterval(() => {
+  //   a += 1
+  // }, 100) //setTimeout에서 한번 출력되는걸 보여주고 끝나지만, 계속해서 변수 a는 누적되는 중임 
+  
+// setTimeout(() => {
+  //   console.log(a)
+  // }, 1000)
+  
+// //아래 형태로 메모리 낭비를 막을수 있음.
+// let a = 0
+
+// const intervalId = setInterval(() => {
+  //   a += 1
+  // }, 100)  
+  
+// setTimeout(() => {
+  //   console.log(a)
+  //   clearInterval(intervalId)
+  // }, 1000)
+  
+// - 잘못된 클로저 사용
+
+const getFn = () => {
+  let a = 0;
+  return name => {
+    a += 1
+    console.log(a)
+    return `Hello, ${name}~`
   }
 }
 
-const count = createCount()
-
-console.log(count()) //1
-console.log(count()) //2
-console.log(count()) //3
- 
+const fn = getFn()
+console.log(fn('Jiho'))
+console.log(fn('Neo'))
+console.log(fn('Lewis'))
